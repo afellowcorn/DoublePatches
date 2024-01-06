@@ -56,11 +56,11 @@ coll = COLLECT(
     strip=False,
     upx=False,
     upx_exclude=[],
-    name='MossMod',
+    name='DoublePatches_MossMod-NonFloof',
 )
 app = BUNDLE(
     coll,
-    name='MossMod.app',
+    name='DoublePatches_MossMod-NonFloof.app',
     icon='resources/images/icon.png',
     bundle_identifier='com.sablesteel.clangen',
     version='0.7.5' # imo we should give dev builds .5
