@@ -320,6 +320,7 @@ class Events:
             for herb in herbs:
                 adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1],
                                            k=1)
+                # print(adjust_by)
                 game.clan.herbs[herb] += adjust_by[0]
                 if game.clan.herbs[herb] <= 0:
                     game.clan.herbs.pop(herb)
@@ -725,8 +726,10 @@ class Events:
         Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
         
         if not cat.dead:
+
             OutsiderEvents.killing_outsiders(cat)
     
+
     def one_moon_cat(self, cat):
         """
         Triggers various moon events for a cat.
@@ -1671,13 +1674,17 @@ class Events:
             return True
 
         # chance to die of old age
-        age_chance = game.config["death_related"]["old_age_death_chance"]
         age_start = game.config["death_related"]["old_age_death_start"]
-        if cat.moons > int(
-                random.random() * age_chance) + age_start:  # cat.moons > 150 <--> 200
-            
-            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False),
-                                            enemy_clan, alive_kits)
+        death_curve_setting = game.config["death_related"]["old_age_death_curve"]
+        death_curve_value = 0.001 * death_curve_setting
+        # made old_age_death_chance into a separate value to make testing with print statements easier
+        old_age_death_chance = ((1 + death_curve_value) ** (cat.moons - age_start)) - 1
+        if random.random() <= old_age_death_chance:
+            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
+            return True
+        # max age has been indicated to be 300, so if a cat reaches that age, they die of old age
+        elif cat.moons >= 300:
+            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
 
         # disaster death chance

@@ -84,6 +84,7 @@ class Name():
                 # needed for random dice when we're changing the Prefix
                 name_fixpref = False
 
+
         if self.suffix and not load_existing_name:
             # Prevent triple letter names from joining prefix and suffix from occuring (ex. Beeeye)
             triple_letter = False
@@ -91,8 +92,10 @@ class Name():
             if all(i == possible_three_letter[0][0] for i in possible_three_letter[0]) or \
                     all(i == possible_three_letter[1][0] for i in possible_three_letter[1]):
                 triple_letter = True
+
             # Prevent double animal names (ex. Spiderfalcon)
             double_animal = False
+
             if self.prefix in self.names_dict["animal_prefixes"] and self.suffix in self.names_dict["animal_suffixes"]:
                 double_animal = True
             # Prevent the inappropriate names
@@ -176,8 +179,6 @@ class Name():
         if self.status in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:
             return self.prefix + self.names_dict["special_suffixes"][self.status]
         else:
-            if game.config['fun']['april_fools']:
-                return self.prefix + 'egg'
             return self.prefix + self.suffix
 
 
