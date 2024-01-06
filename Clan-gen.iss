@@ -1,7 +1,7 @@
 ; Clan-gen Installer Script
 
-#define ApplicationBaseName "DoublePatches"
-#define ApplicationFullName "DoublePatches_Clan-gen (fan edit) by Sablesteel"
+#define ApplicationBaseName "DoublePatches_MossMod"
+#define ApplicationFullName "DoublePatches_MossMod_Clan-gen (fan edit) by Sablesteel"
 
 ; Update this line to the date of the latest Clan-gen (fan edit) by Sablesteel release 
 ; (or choose your own version-numbering scheme)
