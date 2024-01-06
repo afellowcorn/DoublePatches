@@ -56,7 +56,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist DoublePatches_MossMod
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.31+.tar.xz
@@ -150,7 +150,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist DoublePatches_MossMod
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.35+.tar.xz
@@ -266,8 +266,8 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Clangen/.itch.toml dist/ 
-          tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen .itch.toml
+          cp dist/DoublePatches_MossMod/.itch.toml dist/ 
+          tar.exe -a -c -f Clangen_Win32.zip -C dist DoublePatches_MossMod .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32
@@ -390,8 +390,8 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Clangen/.itch.toml dist/ 
-          tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen .itch.toml
+          cp dist/DoublePatches_MossMod/.itch.toml dist/ 
+          tar.exe -a -c -f Clangen_Win64.zip -C dist DoublePatches_MossMod .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64
@@ -514,8 +514,8 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Clangen/.itch.toml dist/ 
-          tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen .itch.toml
+          cp dist/DoublePatches_MossMod/.itch.toml dist/ 
+          tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist DoublePatches_MossMod .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
@@ -623,7 +623,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: rm -r dist/Clangen
+        run: rm -r dist/DoublePatches_MossMod
       - name: Install appdmg
         run: "npm install -g appdmg"
       - name: Generate .dmg
