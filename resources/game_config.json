@@ -268,7 +268,7 @@
 		]
 	},
 	"accessory_generation": {
-		"base_acc_chance": 150,
+		"base_acc_chance": 130,
 		"med_modifier": -80,
 		"baby_modifier": -20,
 		"elder_modifier": 20,
@@ -293,8 +293,8 @@
 		"rejoin_chance": 20
 	},
 	"cat_ages": {
-		"newborn": [0, 0],
-		"kitten": [1, 5],
+		"newborn": [0, 1],
+		"kitten": [2, 5],
 		"adolescent": [6, 11],
 		"young adult": [12, 47],
         "adult": [48, 95],

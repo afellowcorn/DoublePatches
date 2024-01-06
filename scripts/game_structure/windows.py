@@ -409,24 +409,16 @@ class ChangeCatName(UIWindow):
                     self.name_changed.hide()
 
             elif event.ui_element == self.random_prefix:
-                if self.suffix_entry_box.text:
-                    use_suffix = self.suffix_entry_box.text
-                else:
-                    use_suffix = self.the_cat.name.suffix
                 self.prefix_entry_box.set_text(Name(self.the_cat.status,
                                                     None,
-                                                    use_suffix,
+                                                    self.the_cat.name.suffix,
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.pelt.eye_colour,
                                                     self.the_cat.pelt.name,
                                                     self.the_cat.pelt.tortiepattern).prefix)
             elif event.ui_element == self.random_suffix:
-                if self.prefix_entry_box.text:
-                    use_prefix = self.prefix_entry_box.text
-                else:
-                    use_prefix = self.the_cat.name.prefix
                 self.suffix_entry_box.set_text(Name(self.the_cat.status,
-                                                    use_prefix,
+                                                    self.the_cat.name.prefix,
                                                     None,
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.pelt.eye_colour,
@@ -943,7 +935,7 @@ class ChangelogPopup(UIWindow):
                     
                     # For some reason, multi-line links on pygame_gui's text boxes don't work very well. 
                     # So, to work around that, just add a little "link" at the end
-                    info[2] += f" <a href='https://github.com/Thlumyn/clangen/pull/{pr_number.group(1)}'>(link)</a>"
+                    info[2] += f" <a href='https://github.com/ClanGenOfficial/clangen/pull/{pr_number.group(1)}'>(link)</a>"
                 
                 # Format: DATE- \n PR Title (link)
                 file_cont += f"<b>{info[1]}</b>\n- {info[2]}\n"

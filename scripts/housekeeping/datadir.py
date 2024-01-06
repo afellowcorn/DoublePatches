@@ -30,8 +30,8 @@ def get_data_dir():
         return '.'
 
     from platformdirs import user_data_dir
-    
-    return user_data_dir('DoublePatches', 'ClanGen')
+
+    return user_data_dir('DoublePatches_MossMod', 'ClanGen')
 
 
 def get_log_dir():

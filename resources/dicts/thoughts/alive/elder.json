@@ -72,7 +72,9 @@
         "random_age_constraint": [
             "kitten",
             "adolescent",
-            "young adult"
+            "young adult",
+            "adult",
+            "senior adult"
         ]
     },
     {
