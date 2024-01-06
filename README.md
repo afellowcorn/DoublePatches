@@ -1,4 +1,5 @@
 # clangen
+### [GitHub repo](https://github.com/ClanGenOfficial/clangen)
 
 ### [Discord Server](https://discord.gg/rnFQqyPZ7K) || [Itch.io Page](https://sablesteel.itch.io/clan-gen-fan-edit)
 
