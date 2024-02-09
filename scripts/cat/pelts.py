@@ -295,7 +295,6 @@ class Pelt():
         elif self.white_patches in Pelt.point_markings:
             self.points = self.white_patches
             self.white_patches = None
-
         
         if self.tortiepattern and "tortie" in self.tortiepattern:
             self.tortiepattern = sub("tortie", "", self.tortiepattern.lower())
@@ -851,7 +850,7 @@ class Pelt():
                         num += 3
 
                 if len(chosen_pattern) >= 2:
-                    print("DoublePatch: "+str(len(chosen_pattern))+" tortie patches!")
+                    print("DoublePatches: "+str(len(chosen_pattern))+" tortie patches!")
 
                 self.pattern = list(chosen_pattern)
 
@@ -949,7 +948,7 @@ class Pelt():
             return
 
         # Direct inheritance. Will only work if at least one parent has white patches, otherwise continue on.
-        '''if par_whitepatches and not random.randint(0, game.config["cat_generation"]["direct_inheritance"]):
+        if par_whitepatches and not random.randint(0, game.config["cat_generation"]["direct_inheritance"]):
             # This ensures Torties and Calicos won't get direct inheritance of incorrect white patch types
             _temp = par_whitepatches.copy()
             if self.name == "Tortie":
@@ -961,9 +960,21 @@ class Pelt():
                     if p in Pelt.little_white + Pelt.mid_white:
                         _temp.remove(p)
 
+            chosen_white_patches = set()
             # Only proceed with the direct inheritance if there are white patches that match the pelt.
             if _temp:
-                self.white_patches = choice(list(_temp))
+                chosen_white_patches.add(choice(list(_temp)))
+                for x in range(game.config["cat_generation"]["max_white_amount"] - 1):
+                    if not random.randint(0, game.config["cat_generation"]["base_extra_white"]):
+                        for p in chosen_white_patches:
+                            if p in _temp:
+                                _temp.remove(p)
+                        if _temp:
+                            chosen_white_patches.add(choice(list(_temp)))
+
+                if len(chosen_white_patches) >= 2:
+                    print("DoublePatches: "+str(len(chosen_white_patches))+" white patches!")
+                self.white_patches = list(chosen_white_patches)
 
                 # Direct inheritance also effect the point marking.
                 if par_points and self.name != "Tortie":
@@ -971,7 +982,7 @@ class Pelt():
                 else:
                     self.points = None
 
-                return'''
+                return
 
         # dealing with points
         if par_points:
@@ -1060,7 +1071,7 @@ class Pelt():
                 num += 1
 
         if len(chosen_white_patches) >= 2:
-            print("DoublePatch: "+str(len(chosen_white_patches))+" white patches!")
+            print("DoublePatches: "+str(len(chosen_white_patches))+" white patches!")
 
         self.white_patches = list(chosen_white_patches)
         if self.points and self.white_patches in [Pelt.high_white, Pelt.mostly_white, 'FULLWHITE']:
@@ -1109,7 +1120,7 @@ class Pelt():
                 num += 1
 
         if len(chosen_white_patches) >= 2:
-            print("DoublePatch: "+str(len(chosen_white_patches))+" white patches!")
+            print("DoublePatches: "+str(len(chosen_white_patches))+" white patches!")
 
         self.white_patches = list(chosen_white_patches)
         if self.points and self.white_patches in [Pelt.high_white, Pelt.mostly_white, 'FULLWHITE']:
