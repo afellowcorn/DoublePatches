@@ -457,26 +457,26 @@ class SpriteInspectScreen(Screens):
         
         offset = 0
         if light_dark == "light":
-            offset = 80
+            offset = 300
         
         if the_cat.df:
-            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
-            return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70))
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 260, 2400, 260))
+            return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 300, 260))
         elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
-            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
-            return biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70))
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 260, 2400, 260))
+            return biome_platforms.subsurface(pygame.Rect(600 + offset, 0, 300, 260))
         else:
-            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 260, 2400, 260)).convert_alpha()
             season_x = {
                 "greenleaf": 0 + offset,
-                "leafbare": 160 + offset,
-                "leaffall": 320 + offset,
-                "newleaf": 480 + offset
+                "leaf-bare": 600 + offset,
+                "leaf-fall": 1200 + offset,
+                "newleaf": 1800 + offset
             }
             
             
             return biome_platforms.subsurface(pygame.Rect(
-                season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 80, 70))
+                season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 300, 260))
             
     def generate_image_to_save(self):
         """Generates the image to save, with platform if needed. """

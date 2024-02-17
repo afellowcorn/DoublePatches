@@ -44,15 +44,16 @@ if not getattr(sys, 'frozen', False):
     if isMissing:
         if find_spec("thonny") is not None:
             print("""You are missing some requirements to run clangen!
-Please press "Tools" -> "Manage Packages"
-Once the menu opens, click the link below "Install from requirements file".
-Then, select the file "requirements.txt" in the clangen folder.""")
+                  Please press "Tools" -> "Manage Packages"
+                  Once the menu opens, click the link below "Install from requirements file".
+                  Then, select the file "requirements.txt" in the clangen folder.
+                  """)
         else:
             print("""You are missing some requirements to run clangen!
-Please run the following command in your terminal to install them:
-
-python3 -m pip install -r requirements.txt
-""")
+                  Please run the following command in your terminal to install them:
+                  
+                  python3 -m pip install -r requirements.txt
+                  """)
         
         print("If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
         sys.exit(1)
@@ -140,15 +141,21 @@ if os.environ.get('CODESPACES'):
 
 if get_version_info().is_source_build:
     print("Running on source code")
-    if get_version_info().version_number == VERSION_NAME:
+    if get_version_info().version_number == "":
         print("Failed to get git commit hash, using hardcoded version number instead.")
         print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")  # pylint: disable=line-too-long
         print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")  # pylint: disable=line-too-long
 else:
     print("Running on PyInstaller build")
 
-print("Version Name: ", VERSION_NAME)
-print("DoublePatches Mod Version: " + get_version_info().mod_version)
+print("Version Number: ", VERSION_NAME)
+print("Running on commit " + get_version_info().version_number)
+print("============================================================================================================")
+print("============================================================================================================")
+print(" Welcome to Moss Mod! ")
+print(" Version: 2.1.0.0 ")
+print("============================================================================================================")
+print("============================================================================================================")
 
 # Load game
 from scripts.game_structure.load_cat import load_cats, version_convert
@@ -158,7 +165,7 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
-from scripts.debugMenu import debugmode
+from scripts.debug_menu import debugmode
 import pygame_gui
 import pygame
 
@@ -263,9 +270,16 @@ del load_data
 
 start_screen.screen_switches()
 
+
+#Version Number
+if get_version_info().version_number == "":
+    _display_version = VERSION_NAME
+else:
+    _display_version = get_version_info().version_number[0:8]
+
 if game.settings['fullscreen']:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((1500, 1350), (-1, -1)), get_version_info().mod_version[0:8],
+        pygame.Rect((1500, 1350), (-1, -1)), _display_version,
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(
@@ -273,7 +287,7 @@ if game.settings['fullscreen']:
          1400 - version_number.get_relative_rect()[3]))
 else:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((700, 650), (-1, -1)), get_version_info().mod_version[0:8],
+        pygame.Rect((700, 650), (-1, -1)), _display_version,
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(
@@ -282,8 +296,8 @@ else:
 
 if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
-        scale(pygame.Rect((1050, 1321), (670, 100))),
-        "DoublePatches:",
+        scale(pygame.Rect((1050, 1321), (600, 100))),
+        "Dev Build:",
         object_id="#dev_watermark"
     )
 

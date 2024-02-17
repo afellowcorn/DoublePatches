@@ -2,6 +2,9 @@ name: PyInstaller build
 
 on: [push]
 
+permissions:
+  contents: write
+
 jobs:
   build_ubuntu_20_04:
     runs-on: ubuntu-20.04
@@ -40,6 +43,11 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
+      # This only runs on development builds, please write release commits manually
+      - name: Write commit file
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python3 -m PyInstaller Clangen.spec
@@ -51,7 +59,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist DoublePatches
+        run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.31+.tar.xz
@@ -129,6 +137,11 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
+      # This only runs on development builds, please write release commits manually
+      - name: Write commit file
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          git log --pretty=oneline -15 --no-decorate  --no-merges > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python3 -m PyInstaller Clangen.spec
@@ -140,7 +153,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist DoublePatches
+        run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.35+.tar.xz
@@ -232,6 +245,12 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
+      # This only runs on development builds, please write release commits manually
+      - name: Write commit file
+        shell: bash
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       - name: Build self-updater binary
         shell: bash
         run: |
@@ -250,8 +269,8 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/DoublePatches/.itch.toml dist/ 
-          tar.exe -a -c -f Clangen_Win32.zip -C dist DoublePatches .itch.toml
+          cp dist/Clangen/.itch.toml dist/ 
+          tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32
@@ -345,6 +364,12 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
+      # This only runs on development builds, please write release commits manually
+      - name: Write commit file
+        shell: bash
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX
       #  run: |
@@ -368,8 +393,8 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/DoublePatches/.itch.toml dist/ 
-          tar.exe -a -c -f Clangen_Win64.zip -C dist DoublePatches .itch.toml
+          cp dist/Clangen/.itch.toml dist/ 
+          tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64
@@ -463,6 +488,12 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
+      # This only runs on development builds, please write release commits manually
+      - name: Write commit file
+        shell: bash
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX
       #  run: |
@@ -486,8 +517,8 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/DoublePatches/.itch.toml dist/ 
-          tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist DoublePatches .itch.toml
+          cp dist/Clangen/.itch.toml dist/ 
+          tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
@@ -579,6 +610,11 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
+      # This only runs on development builds, please write release commits manually
+      - name: Write commit file
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: python -m PyInstaller Clangen.spec
@@ -590,7 +626,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: rm -r dist/DoublePatches
+        run: rm -r dist/Clangen
       - name: Install appdmg
         run: "npm install -g appdmg"
       - name: Generate .dmg

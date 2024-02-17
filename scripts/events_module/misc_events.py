@@ -92,6 +92,24 @@ class MiscEvents():
             change_clan_relations(other_clan, difference=difference)
 
         event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=reveal, victim=victim)
+        
+        if event_text:
+            # Add event text to the relationship log if two cats are involved
+            if other_cat:
+                pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
+                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy", "neg_trust"]
+                effect = ""
+                if any(tag in misc_event.tags for tag in pos_rel_event):
+                    effect = " (positive effect)"
+                elif any(tag in misc_event.tags for tag in neg_rel_event):
+                    effect = " (negative effect)"
+
+                log_text = event_text + effect
+
+                if cat.moons == 1:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moon old")
+                else:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moons old")
 
         types = ["misc"]
         if "other_clan" in misc_event.tags:
@@ -173,9 +191,15 @@ class MiscEvents():
             acc_list.extend(Pelt.plant_accessories)
         if "COLLAR" in possible_accs:
             acc_list.extend(Pelt.collars)
+        if "WILD2" in possible_accs:
+            acc_list.extend(Pelt.wild2_accessories)
+        if "PLANT2" in possible_accs:
+            acc_list.extend(Pelt.plant2_accessories)
+        if "LIVING" in possible_accs:
+            acc_list.extend(Pelt.living_accessories)
 
         for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR"]:
+            if acc not in ["WILD", "PLANT", "COLLAR", "WILD2", "PLANT2", "LIVING"]:
                 acc_list.append(acc)
 
         if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:

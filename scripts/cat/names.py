@@ -64,11 +64,13 @@ class Name():
                  tortiepattern=None,
                  biome=None,
                  specsuffix_hidden=False,
-                 load_existing_name=False):
+                 load_existing_name=False,
+                 moons = None):
         self.status = status
         self.prefix = prefix
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
+        self.moons = moons
 
         name_fixpref = False
         # Set prefix
@@ -84,6 +86,7 @@ class Name():
                 # needed for random dice when we're changing the Prefix
                 name_fixpref = False
 
+
         if self.suffix and not load_existing_name:
             # Prevent triple letter names from joining prefix and suffix from occuring (ex. Beeeye)
             triple_letter = False
@@ -91,8 +94,10 @@ class Name():
             if all(i == possible_three_letter[0][0] for i in possible_three_letter[0]) or \
                     all(i == possible_three_letter[1][0] for i in possible_three_letter[1]):
                 triple_letter = True
+
             # Prevent double animal names (ex. Spiderfalcon)
             double_animal = False
+
             if self.prefix in self.names_dict["animal_prefixes"] and self.suffix in self.names_dict["animal_suffixes"]:
                 double_animal = True
             # Prevent the inappropriate names
@@ -173,12 +178,18 @@ class Name():
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
     def __repr__(self):
+        # Handles predefined suffixes (such as newborns being kit), then suffixes based on ages (fixes #2004, just trust me)
         if self.status in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:
             return self.prefix + self.names_dict["special_suffixes"][self.status]
-        else:
-            if game.config['fun']['april_fools']:
-                return self.prefix + 'egg'
-            return self.prefix + self.suffix
+
+        if self.status in ['loner'] and not self.specsuffix_hidden and self.moons is not None and self.moons < 12:
+            if self.moons < 6:
+                return self.prefix + 'kit'
+            return self.prefix + 'paw'
+        if game.config['fun']['april_fools']:
+            return self.prefix + 'egg'
+        return self.prefix + self.suffix
+
 
 
 names = Name()

@@ -92,7 +92,9 @@
         "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -123,7 +125,9 @@
         "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -145,7 +149,9 @@
         "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -177,7 +183,9 @@
         "event_text": "m_c finds acc_plural while out on a walk and decides to keep them.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -198,7 +206,9 @@
         "event_text": "r_c finds acc_plural while out on a walk and decides to give them to m_c.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "PLANT2",
+            "WILD2"
         ]
     },
     {
@@ -293,6 +303,7 @@
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare",
+            "other_clan",
             "war"
         ],
         "event_text": "The tension between c_n and o_c is palpable, with even the smallest actions potentially leading to violence."
@@ -304,6 +315,7 @@
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare",
+            "other_clan",
             "war"
         ],
         "event_text": "The war with o_c is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves."
@@ -505,13 +517,57 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "event_text": "m_c considers, as {PRONOUN/m_c/subject} {VERB/m_c/look/looks} out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
-        "cat_trait": [
-            "adventurous",
-            "daring",
-            "insecure",
-            "nervous"
-        ]
+        "event_text": "m_c considers, as {PRONOUN/m_c/subject} look out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject} belong.",
+       "cat_trait": [
+           "adventurous",
+           "daring",
+           "insecure",
+           "nervous"]
+     },
+    {
+      "camp": "any",
+      "tags": [
+          "Newleaf",
+          "Greenleaf",
+          "Leaf-fall"
+      ],
+      "event_text": "m_c cant seem to get a pesky acc_singular off {PRONOUN/m_c/poss} face.",
+      "accessories": [
+          "LUNA MOTH",
+          "ATLAS MOTH"
+      ]
+   },
+   {
+      "camp": "any",
+      "tags": [
+          "Newleaf",
+          "Greenleaf",
+          "Leaf-fall"],
+      "event_text": "m_c is always surrounded by a acc_singular.",
+      "accessories": [
+          "FIREFLIES",
+          "BUTTERFLIES"
+      ]
+   },
+    {
+      "camp": "any",
+      "tags": [
+          "Newleaf",
+          "Greenleaf",
+          "Leaf-fall"],
+      "event_text": "m_c seems to be exceptionally good at moss ball!",
+      "accessories": [
+          "MOSS BALL"
+      ]
+   },
+    {
+      "camp": "any",
+      "tags": [
+          "Greenleaf"],
+      "event_text": "Desperate to escape Greenleaf's heat, m_c hesitantly decides to cool off in a fresh water pond nearby. {PRONOUN/m_c/subject} thankfully {VERB/m_c/cool/cools} off quickly, but {VERB/m_c/are/is} now covered in pesky water leaves!",
+      "accessories": [
+          "LILY PAD"
+      ]
     },
     {
         "camp": "any",
@@ -565,7 +621,7 @@
             "murder_reveal",
             "other_cat"
         ],
-        "event_text": "m_c can't keep this secret anymore. When {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} alone with r_c, {PRONOUN/m_c/subject} tell the story of mur_c's death."
+        "event_text": "m_c can't keep this secret anymore. When {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} alone with r_c, {PRONOUN/m_c/subject} {VERB/m_c/tell/tells} the story of mur_c's death."
     },
     {
         "camp": "any",
@@ -685,6 +741,23 @@
         "event_text": "r_c is stunned when {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} m_c carelessly bragging about killing mur_c to a wandering loner.",
         "cat_trait": [
             "oblivious"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept.",
+        "cat_trait": [
+            "righteous",
+            "bold",
+            "strict"
         ]
     }
 ]
