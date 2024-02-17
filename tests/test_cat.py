@@ -9,7 +9,9 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
+from scripts.cat.skills import CatSkills, SkillPath
 from scripts.cat_relations.relationship import Relationship
+from scripts.cat.history import History
 
 
 class TestCreationAge(unittest.TestCase):

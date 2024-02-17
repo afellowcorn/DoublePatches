@@ -102,7 +102,7 @@ class SkillPath(Enum):
     )
     STAR = (
         "curious about StarClan",
-        "connection to StarClan",
+        "connection to Starclan",
         "deep StarClan bond",
         "unshakable StarClan link",
     )
@@ -161,6 +161,7 @@ class SkillPath(Enum):
                            i not in exclude and i not in uncommon_paths]
             return random.choice(common_paths)
 
+    
 class HiddenSkillEnum(Enum):
     ROGUE = "rogue's knowledge"
     LONER = "loner's knowledge"

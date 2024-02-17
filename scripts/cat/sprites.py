@@ -117,7 +117,7 @@ class Sprites():
             'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 'maskedcolours',
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-            'fadestarclan', 'fadedarkforest', 'abyssiancolours', 'braidedcolours', 'brindlecolours',
+            'fadestarclan', 'fadedarkforest', 'eyes3', 'abyssiancolours', 'braidedcolours', 'brindlecolours',
             'fadedcolours', 'sabercolours', 'splotchcolours', 'mossherbs'
 
         ]:
@@ -143,26 +143,11 @@ class Sprites():
         for a, i in enumerate(
                 ['YELLOW', 'AMBER', 'HAZEL', 'PALE GREEN', 'GREEN', 'BLUE']):
             self.make_group('eyes', (a, 0), f'eyes{i}')
-
+            self.make_group('eyes2', (a, 0), f'eyes2{i}')
+            self.make_group('eyes3', (a, 0), f'eyes3{i}')
         for a, i in enumerate(
                 ['DARK BLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHER BLUE', 'SUN-LIT ICE']):
             self.make_group('eyes', (a, 1), f'eyes{i}')
-
-        for a, i in enumerate(
-                ['COPPER', 'SAGE', 'BRIGHT BLUE', 'PALE BLUE', 'LAVENDER', 'DARK GREY']):
-            self.make_group('eyes', (a, 2), f'eyes{i}')
-
-        for a, i in enumerate(
-                ['PALE YELLOW', 'GOLD', 'LIME', 'HAZELNUT', 'DARK AMBER', 'SLATE']):
-            self.make_group('eyes', (a, 3), f'eyes{i}')
-
-        for a, i in enumerate(
-                ['RUBY', 'LILAC', 'LIGHT GREY', 'PINK', 'DARK HAZEL', 'CHOCOLATE']):
-            self.make_group('eyes', (a, 4), f'eyes{i}')
-
-        for a, i in enumerate(['TRUE', 'CENTRAL', 'QUARTER', 'SLIVER', 'SPECKLES', 'FROSTED']):
-            self.make_group('eyes2', (a, 0), f'eyes2{i}')
-        for a, i in enumerate(['RING', 'HALFCENTRAL', 'HALFRING', 'BUBBLE', 'OUTRING', 'SWAP']):
             self.make_group('eyes2', (a, 1), f'eyes2{i}')
             self.make_group('eyes3', (a, 1), f'eyes3{i}')
         for a, i in enumerate(
@@ -205,24 +190,18 @@ class Sprites():
         for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT',
             'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO', 'WOODPECKER']):
             self.make_group('whitepatches2', (a, 0), f'white{i}')
-
         # acorn's white patches + ryos' bub + fable lovebug + frankie trixie
         for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO', 'BUB', 'BOWTIE', 'MUSTACHE', 'REVERSEHEART',
             'SPARROW', 'VEST', 'LOVEBUG', 'TRIXIE', 'SAMMY', 'SPARKLE']):
             self.make_group('whitepatches2', (a, 1), f'white{i}')
-
         # acorn's white patches: the sequel
         for a, i in enumerate(['RIGHTEAR', 'LEFTEAR', 'ESTRELLA', 'SHOOTINGSTAR', 'EYESPOT', 'REVERSEEYE',
             'FADEBELLY', 'FRONT', 'BLOSSOMSTEP', 'PEBBLE', 'TAILTWO', 'BUDDY', 'BACKSPOT', 'EYEBAGS']):
             self.make_group('whitepatches2', (a, 2), f'white{i}')
+        for a, i in enumerate(['BULLSEYE', 'FINN', 'DIGIT', 'KROPKA', 'FCTWO', 'FCONE', 'MIA', 'SCAR', 'BUSTER', 'SMOKEY']):
+            self.make_group('whitepatches2', (a, 3), 'white' + i)
 
-        for a, i in enumerate(['BULLSEYE', 'FINN', 'DIGIT', 'KROPKA', 'FCTWO', 'FCONE', 'MIA', 'SCAR',
-            'BUSTER', 'SMOKEY', 'HAWKBLAZE', 'CAKE', 'ROSINA', 'PRINCESS']):
-            self.make_group('whitepatches2', (a, 3), f'white{i}')
-        for a, i in enumerate(['LOCKET', 'BLAZEMASK', 'TEARS', 'DOUGIE']):
-            self.make_group('whitepatches2', (a, 4), 'white' + i)
 
-        # moss patches
         for a, i in enumerate(
                 ['CHANCE', 'MOSSY', 'MOTH', 'NIGHTMIST', 'FALCON', 'VENUS', 'RETSUKO', 'TIDAL', 'DIAMOND',
                  'ECLIPSE', 'SNOWSTORM', 'PEPPER', 'COWTHREE', 'COWFOUR']):
@@ -502,7 +481,7 @@ class Sprites():
             self.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")
         for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED', 'BODY']):
             self.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
-        for a, i in enumerate(['SHILOH']):
+        for a, i in enumerate(['SHILOH', 'FRECKLED', 'HEARTBEAT']):
             self.make_group('tortiepatchesmasks', (a, 4), f"tortiemask{i}")
 
         for a, i in enumerate(['VIPER', 'SKULL', 'POINTS', 'DITTO']):
@@ -535,9 +514,6 @@ class Sprites():
                 ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY", "TOETRAP", "SNAKE",
                  "LEGBITE", "NECKBITE", "FACE"]):
             self.make_group('scars', (a, 2), f'scars{i}')
-        for a, i in enumerate(
-                ["HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "TOE", "BEAKSIDE", "CATBITETWO", "SNAKETWO", "FOUR"]):
-            self.make_group('scars', (a, 3), f'scars{i}')
         # missing parts
         for a, i in enumerate(
                 ["LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"]):

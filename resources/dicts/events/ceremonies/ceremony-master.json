@@ -644,7 +644,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "p1 is watching with pride as m_c is named and given to (mentor) to apprentice under. {PRONOUN/p1/subject/CAP} {VERB/p1/know/knows} that (mentor) was a good choice."
+    "p1 is watching with pride as m_c is named and given to (mentor) to apprentice under. {PRONOUN/p1/subject/CAP} know that (mentor) was a good choice."
   ],
   "app_38": [
     [
@@ -2593,7 +2593,7 @@
       "wise",
       "cunning"
     ],
-    "l_n almost feels intimidated by the knowledge (old_name) has gathered in {PRONOUN/m_c/poss} moons of training and feels confident when {PRONOUN/l_n/subject} {VERB/l_n/name/names} {PRONOUN/m_c/object} m_c in honor of {PRONOUN/m_c/poss} r_h."
+    "l_n almost feels intimidated by the knowledge (old_name) has gathered in {PRONOUN/m_c/poss} months of training and feels confident when {PRONOUN/l_n/subject} {VERB/l_n/name/names} {PRONOUN/m_c/object} m_c in honor of {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_45": [
     [
@@ -2831,7 +2831,7 @@
       "prepared",
       "general_mentor",
       "general_parents",
-      "yes_leader",
+      "general_leader",
       "general_backstory",
       "all_traits"
     ],
@@ -2843,7 +2843,7 @@
       "prepared",
       "general_mentor",
       "general_parents",
-      "yes_leader",
+      "general_leader",
       "general_backstory",
       "all_traits"
     ],
@@ -2854,7 +2854,7 @@
       "mediator",
       "alive_mentor",
       "general_parents",
-      "yes_leader",
+      "general_leader",
       "general_backstory",
       "all_traits"
     ],

@@ -103,7 +103,7 @@
         "biome": ["mountainous"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["large_prey3"],
         "patrol_art": "gen_hunt_strange",
         "min_cats": 1,
         "max_cats": 1,
@@ -152,7 +152,7 @@
         "biome": ["mountainous"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["large_prey3"],
         "patrol_art": "gen_hunt_huntassessment",
         "min_cats": 1,
         "max_cats": 1,
@@ -201,8 +201,7 @@
             {
                 "text": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
                 "exp": 0,
-                "weight": 20,
-                "prey": ["very_small"]
+                "weight": 20
             },
             {
                 "text": "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/object} empty pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly need more training.",
@@ -231,8 +230,7 @@
                         "scars": ["LEFTEAR"]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured as an apprentice, exploring alone." },
-                "prey": ["very_small"]
+                "history_text": { "scar": "m_c got injured as an apprentice, exploring alone." }
             }
         ]
     },
@@ -449,7 +447,7 @@
         "biome": ["mountainous"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["medium_prey2"],
         "patrol_art": "hunt_general_intro",
         "min_cats": 5,
         "max_cats": 6,
@@ -469,8 +467,7 @@
                 "text": "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"],
-                "prey": ["large"]
+                "stat_skill": ["HUNTER,1"]
             }
         ],
         "fail_outcomes": [
@@ -508,7 +505,7 @@
         "biome": ["mountainous"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["medium_prey2"],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 4,
@@ -528,8 +525,7 @@
                 "text": "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["HUNTER,1"],
-                "prey": ["large"]
+                "stat_skill": ["HUNTER,1"]
             }
         ],
         "fail_outcomes": [
@@ -579,7 +575,7 @@
         "biome": ["mountainous"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["large_prey2"],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -1185,8 +1181,7 @@
                     "reg_death": "m_c died from the yellowcough brought to the Clan by the Belled Buzzard.",
                     "lead_death": "died from the yellowcough brought by the Belled Buzzard"
                 },
-                "art": "belledbuzzard_OUTCOME",
-				"prey": ["very_small"]
+                "art": "belledbuzzard_OUTCOME"
             }
         ]
     }

@@ -15,27 +15,27 @@ class Scar_Events():
 
     # scar pools
     bite_scars = [
-        "CATBITE", "CATBITETWO"
+        "CATBITE"
     ]
     rat_scars = [
-        "RATBITE", "TOE"
+        "RATBITE"
     ]
     beak_scars = [
-        "BEAKCHEEK", "BEAKLOWER", "BEAKSIDE"
+        'BEAKCHEEK', 'BEAKLOWER'
     ]
     canid_scars = [
         "LEGBITE", "NECKBITE", "TAILSCAR", "BRIGHTHEART"
     ]
     snake_scars = [
-        "SNAKE", "SNAKETWO"
+        "SNAKE"
     ]
     claw_scars = [
         "ONE", "TWO", "SNOUT", "TAILSCAR", "CHEEK",
         "SIDE", "THROAT", "TAILBASE", "BELLY", "FACE",
-        "BRIDGE", "HINDLEG", "BACK", "SCRATCH"
+        "BRIDGE"
     ]
     leg_scars = [
-        "NOPAW", "TOETRAP", "MANLEG", "FOUR"
+        "NOPAW", "TOETRAP", "MANLEG",
     ]
     tail_scars = [
         "TAILSCAR", "TAILBASE", "NOTAIL", "HALFTAIL", "MANTAIL"
@@ -54,16 +54,16 @@ class Scar_Events():
         "BRIGHTHEART", "BURNPAWS", "BURNTAIL", "BURNBELLY", "BURNRUMP"
     ]
     quill_scars = [
-        "QUILLCHUNK", "QUILLSCRATCH", "QUILLSIDE"
+        "QUILLCHUNK", "QUILLSCRATCH"
     ]
     head_scars = [
         "SNOUT", "CHEEK", "BRIDGE", "BEAKCHEEK"
     ]
     bone_scars = [
-        "MANLEG", "TOETRAP", "FOUR"
+        "MANLEG",  "TOETRAP"
     ]
     back_scars = [
-        "TWO", "TAILBASE", "BACK"
+        "TWO", "TAILBASE"
     ]
     
     scar_allowed = {
@@ -84,6 +84,7 @@ class Scar_Events():
         "broken jaw": head_scars,
         "broken back": back_scars,
         "broken bone": bone_scars,
+        "head damage": head_scars
     }
 
     @staticmethod
