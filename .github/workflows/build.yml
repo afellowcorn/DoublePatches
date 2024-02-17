@@ -43,11 +43,6 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
-      # This only runs on development builds, please write release commits manually
-      - name: Write commit file
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python3 -m PyInstaller Clangen.spec
@@ -137,11 +132,6 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
-      # This only runs on development builds, please write release commits manually
-      - name: Write commit file
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          git log --pretty=oneline -15 --no-decorate  --no-merges > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python3 -m PyInstaller Clangen.spec
@@ -245,12 +235,6 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
-      # This only runs on development builds, please write release commits manually
-      - name: Write commit file
-        shell: bash
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       - name: Build self-updater binary
         shell: bash
         run: |
@@ -364,12 +348,6 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
-      # This only runs on development builds, please write release commits manually
-      - name: Write commit file
-        shell: bash
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX
       #  run: |
@@ -488,12 +466,6 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
-      # This only runs on development builds, please write release commits manually
-      - name: Write commit file
-        shell: bash
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX
       #  run: |
@@ -610,11 +582,6 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
-      # This only runs on development builds, please write release commits manually
-      - name: Write commit file
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: python -m PyInstaller Clangen.spec
