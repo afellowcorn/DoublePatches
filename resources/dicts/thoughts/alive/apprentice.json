@@ -56,7 +56,7 @@
             "Is watching and learning from r_c",
             "Wishes r_c would let {PRONOUN/m_c/object} sleep, instead of assigning {PRONOUN/m_c/object} to the dawn patrol",
             "Would like to become as great as r_c one day",
-            "Hopes r_c notices how well {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} training is going",
+            "Hopes r_c notices how well {PRONOUN/m_c/poss} training is going",
             "Offers to help r_c today",
             "Asks r_c for an extra task"
         ],
@@ -255,7 +255,7 @@
         "thoughts": [
             "Is showing off {PRONOUN/m_c/poss} new battle moves",
             "Is pushing hard for more battle training",
-            "Was recently chastised by {PRONOUN/m_c/poss} mentor for reckless behaviour out on patrol",
+            "Was recently chastised by {PRONOUN/m_c/poss} mentor for reckless behavior out on patrol",
             "Practiced battle moves with {PRONOUN/m_c/poss} claws out",
             "Is keeping {PRONOUN/m_c/poss} claws extra sharp",
             "Is hissing at r_c",
