@@ -185,7 +185,16 @@
 		"direct_inheritance": 15,
 		"wildcard_tortie": 9,
 		"vit_chance": 8,
-		"random_point_chance": 5
+		"random_point_chance": 5,
+		"base_extra_white": 5,
+		"max_white_amount": 2,
+		"base_extra_tortie": 3,
+		"max_tortie_amount": 2,
+		"comment": [
+			"max_white_amount is the max amount of white patches one cat can generate with - 2 by default",
+			"max_tortie_amount is the max amount of tortie patches one cat can generate with - 2 by default",
+			"Note that extra patch chances decrease with each extra patch - chances base_extra_white 5 by default, base_extra_tortie 3 by default"
+		]
 	},
 	"cat_name_controls": {
 		"always_name_after_appearance": false,
@@ -281,7 +290,7 @@
 		"war_injury_modifier": 100
 	},
 	"clan_creation": {
-		"rerolls": 3,
+		"rerolls": -1,
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {

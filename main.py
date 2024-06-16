@@ -141,7 +141,7 @@ else:
     print("Running on PyInstaller build")
 
 print("Version Name: ", VERSION_NAME)
-print("Running on commit " + get_version_info().version_number)
+print("DoublePatches Mod Version: " + get_version_info().mod_version)
 
 # Load game
 from scripts.game_structure.load_cat import load_cats, version_convert
@@ -275,8 +275,8 @@ else:
 
 if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
-        scale(pygame.Rect((1050, 1321), (600, 100))),
-        "Dev Build:",
+        scale(pygame.Rect((1050, 1321), (670, 100))),
+        "DoublePatches:",
         object_id="#dev_watermark"
     )
 
