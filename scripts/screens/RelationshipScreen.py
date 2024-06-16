@@ -14,6 +14,7 @@ from scripts.game_structure.windows import RelationshipLog
 from scripts.game_structure.propagating_thread import PropagatingThread
 
 
+
 class RelationshipScreen(Screens):
     checkboxes = {}  # To hold the checkboxes.
     focus_cat_elements = {}

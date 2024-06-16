@@ -100,9 +100,9 @@
     "singular": "cardinal feather"
   },
   "BLUE FEATHERS": {
-    "default": "crow feathers",
-    "plural": "crow feathers",
-    "singular": "crow feather"
+    "default": "blue feathers",
+    "plural": "blue feathers",
+    "singular": "blue feather"
   },
   "JAY FEATHERS": {
     "default": "jay feathers",
@@ -418,5 +418,125 @@
     "default": "indigo nylon collar",
     "plural": "indigo nylon collars",
     "singular": "indigo nylon collar"
+  },
+  "LUNA MOTH": {
+    "default": "luna moth",
+    "plural": "luna moths",
+    "singular": "luna moth"
+  },
+  "ATLAS MOTH": {
+    "default": "atlas moth",
+    "plural": "atlas moths",
+    "singular": "atlas moth"
+  },
+  "BIRD SKULL": {
+    "default": "bird skull",
+    "plural": "bird skulls",
+    "singular": "bird skull"
+  },
+  "IVY": {
+    "default": "ivy",
+    "plural": "ivy vines",
+    "singular": "ivy vine"
+  },
+  "DAISY": {
+    "default": "daisies",
+    "plural": "daisies",
+    "singular": "bunch of daisies"
+  },
+  "BUTTERFLIES": {
+    "default": "butterflies",
+    "plural": "butterflies",
+    "singular": "swarm of butterflies"
+  },
+  "CLOVER": {
+    "default": "four-leaf clover",
+    "plural": "clovers",
+    "singular": "clover"
+  },
+  "ANTLERS": {
+    "default": "stick antlers",
+    "plural": "stick antlers",
+    "singular": "pair of stick antlers"
+  },
+  "STICK": {
+    "default": "odd stick",
+    "plural": "sticks",
+    "singular": "stick"
+  },
+  "FIREFLIES": {
+    "default": "fireflies",
+    "plural": "fireflies",
+    "singular": "swarm of fireflies"
+  },
+  "WREATH": {
+    "default": "leaf wreath",
+    "plural": "leaves",
+    "singular": "wreath of leaves"
+  },
+  "FLOWER WREATH": {
+    "default": "flower wreath",
+    "plural": "flowers",
+    "singular": "wreath of flowers"
+  },
+  "SPROUT": {
+    "default": "sprout",
+    "plural": "sprouting leaves",
+    "singular": "sprout"
+  },
+  "MUSHROOM": {
+    "default": "mushrooms",
+    "plural": "mushrooms",
+    "singular": "mushroom colony"
+  },
+  "LILAC": {
+    "default": "lilac",
+    "plural": "lilac flowers",
+    "singular": "bunch of lilac"
+  },
+  "SEAWEED": {
+    "default": "seaweed",
+    "plural": "strands of seaweed",
+    "singular": "seaweed"
+  },
+  "LILY PAD": {
+    "default": "lily pad",
+    "plural": "lily pads",
+    "singular": "lily pad"
+  },
+  "MONSTERA": {
+    "default": "monstera leaf",
+    "plural": "monstera leaves",
+    "singular": "monstera leaf"
+  },
+  "WILD FLOWERS": {
+    "default": "wild flowers",
+    "plural": "wild flowers",
+    "singular": "bunch of flowers"
+  },
+  "TWIGS": {
+    "default": "twigs",
+    "plural": "twigs",
+    "singular": "twig"
+  },
+  "SHELL": {
+    "default": "sea shell",
+    "plural": "shells",
+    "singular": "shell"
+  },
+  "CRYSTAL": {
+    "default": "crystal",
+    "plural": "crystal shards",
+    "singular": "crystal formation"
+  },
+  "SERPENT": {
+    "default": "snake skeleton",
+    "plural": "snake bones",
+    "singular": "snake skeleton"
+  },
+  "MOSS BALL": {
+    "default": "moss ball",
+    "plural": "moss balls",
+    "singular": "moss ball"
   }
 }

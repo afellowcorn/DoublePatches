@@ -76,7 +76,9 @@
             "Is hiding from other cats",
             "Is annoying older cats",
             "Is asking the older cats about how kittens are made",
-            "Is pestering older cats to play with {PRONOUN/m_c/object}"
+            "Is pestering older cats to play with {PRONOUN/m_c/object}",
+
+            "Is begging r_c to take {PRONOUN/m_c/object} out of camp"
         ],
         "random_age_constraint": [
             "adolescent",
@@ -483,6 +485,76 @@
         ],
         "main_trait_constraint": [
             "bossy"
+        ]
+    },
+    {
+        "id": "kit_siblings",
+        "thoughts": [
+            "Is snuggling with r_c in the nursery",
+            "Is happy to have r_c as a sibling",
+            "Is always close to r_c",
+            "Wants to get into mischief with r_c",
+            "Is happy to have r_c to play with",
+            "Promises to always be friends with r_c",
+            "Thinks r_c is the best sibling ever"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "kit_older_sibling",
+        "thoughts": [
+            "Is happy to have r_c as an older sibling",
+            "Is fondly following r_c around",
+            "Is hoping r_c will be {PRONOUN/m_c/poss} mentor",
+            "Wonders if r_c would be an even better sibling if they were littermates",
+            "Is hoping r_c will visit the nursery",
+            "Can't wait to be big enough to play with r_c"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice",
+            "warrior",
+            "mediator",
+            "medicine cat",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "kit_living_parent",
+        "thoughts": [
+            "Purrs softly while cuddling with r_c",
+            "Is following r_c everywhere",
+            "Is happy to have r_c to take care of {PRONOUN/m_c/object}",
+            "Is asking if {PRONOUN/m_c/subject} {VERB/m_c/are/is} r_c's favorite kitten",
+            "Is taking a nap while curled up close to r_c",
+            "Is begging r_c to stay in the nursery",
+            "Is begging r_c for extra play time",
+            "Wants to be with r_c forever",
+            "Loves r_c so much",
+            "Wants to be just like r_c"
+        ],
+        "relationship_constraint": [
+            "child/parent"
+        ],
+        "random_living_status": [
+            "living"
         ]
     }
 ]

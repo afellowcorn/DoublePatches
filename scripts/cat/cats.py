@@ -678,7 +678,6 @@ class Cat():
         """ Makes a "outside cat" a Clan cat. Returns a list of any additional cats that
             are coming with them. """
         self.outside = False
-
         game.clan.add_to_clan(self)
 
         # check if there are kits under 12 moons with this cat and also add them to the clan
@@ -807,6 +806,8 @@ class Cat():
     def describe_eyes(self):
         colour = str(self.pelt.eye_colour).lower()
         colour2 = str(self.pelt.eye_colour2).lower()
+        colour3 = str(self.pelt.eye_colour3).lower()
+
 
         if colour == 'palegreen':
             colour = 'pale green'
@@ -840,6 +841,24 @@ class Cat():
             if colour2 == 'greenyellow':
                 colour2 = 'green-yellow'
             colour = colour + ' and ' + colour2
+        if self.pelt.eye_colour3 != None:
+            if colour3 == 'palegreen':
+                colour3 = 'pale green'
+            if colour3 == 'darkblue':
+                colour3 = 'dark blue'
+            if colour3 == 'paleblue':
+                colour3 = 'pale blue'
+            if colour3 == 'paleyellow':
+                colour3 = 'pale yellow'
+            if colour3 == 'heatherblue':
+                colour3 = 'heather blue'
+            if colour3 == 'blue2':
+                colour3 = 'blue'
+            if colour3 == 'sunlitice':
+                colour3 = 'sunlit ice'
+            if colour3 == 'greenyellow':
+                colour3 = 'green-yellow'
+            colour = 'half ' + colour + ' and half ' + colour3
         return colour
 
     def convert_history(self, died_by, scar_events):
@@ -2908,6 +2927,7 @@ class Cat():
                 "sprite_para_adult": self.pelt.cat_sprites['para_adult'],
                 "eye_colour": self.pelt.eye_colour,
                 "eye_colour2": self.pelt.eye_colour2 if self.pelt.eye_colour2 else None,
+                "eye_colour3": self.pelt.eye_colour3 if self.pelt.eye_colour3 else None,
                 "reverse": self.pelt.reverse,
                 "white_patches": self.pelt.white_patches,
                 "vitiligo": self.pelt.vitiligo,

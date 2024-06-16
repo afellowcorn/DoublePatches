@@ -71,9 +71,12 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
+
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -332,6 +335,45 @@
         "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side."
     },
     {
+    "camp": "any",
+    "tags": [
+        "Newleaf",
+        "Greenleaf",
+        "Leaf-fall"
+    ],
+    "event_text": "m_c cant seem to get a pesky acc_singular off {PRONOUN/m_c/poss} face.",
+    "accessories": [
+        "LUNA MOTH",
+        "ATLAS MOTH"
+    ]
+  },
+  {
+    "camp": "any",
+    "tags": [
+        "Newleaf",
+        "Greenleaf",
+        "Leaf-fall"
+    ],
+    "event_text": "m_c is always surrounded by a acc_singular.",
+    "accessories": [
+        "FIREFLIES",
+        "BUTTERFLIES"
+    ]
+  },
+  {
+    "camp": "any",
+    "tags": [
+        "Newleaf",
+        "Greenleaf",
+        "Leaf-fall",
+        "Leaf-bare"
+    ],
+    "event_text": "m_c hears the whispers of ancient voices that seem to be coming from an oddly scratched acc_singular.",
+    "accessories": [
+        "STICK"
+    ]
+  },
+    {
         "camp": "Any",
         "tags": [
             "medicine_cat",
@@ -344,3 +386,4 @@
     }
 
 ]
+

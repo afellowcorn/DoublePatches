@@ -307,6 +307,7 @@ class Events:
             for herb in herbs:
                 adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1],
                                            k=1)
+                # print(adjust_by)
                 game.clan.herbs[herb] += adjust_by[0]
                 if game.clan.herbs[herb] <= 0:
                     game.clan.herbs.pop(herb)
@@ -712,8 +713,10 @@ class Events:
         Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
         
         if not cat.dead:
+
             OutsiderEvents.killing_outsiders(cat)
     
+
     def one_moon_cat(self, cat):
         """
         Triggers various moon events for a cat.

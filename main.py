@@ -133,15 +133,57 @@ if os.environ.get('CODESPACES'):
 
 if get_version_info().is_source_build:
     print("Running on source code")
-    if get_version_info().version_number == VERSION_NAME:
+    if get_version_info().version_number == "":
         print("Failed to get git commit hash, using hardcoded version number instead.")
         print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")  # pylint: disable=line-too-long
         print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")  # pylint: disable=line-too-long
 else:
     print("Running on PyInstaller build")
 
-print("Version Name: ", VERSION_NAME)
+print("Version Number: ", VERSION_NAME)
 print("Running on commit " + get_version_info().version_number)
+print("============================================================================================================")
+print("============================================================================================================")
+print("| Welcome to Moss Mod! |")
+print("------------------------")
+print(" ")
+print("If this is your first time playing, make sure to install all required modules by going to:")
+print("Tools -> Manage Packages -> Install from requirements and select requirements.txt")
+print(" ")
+print(" ")
+print("Please allow up to 5 minutes for the game to load, and don't worry if it says 'Not Responding'")
+print("If it crashes or doesn't load after 5 minutes, use the Lite or Extra Lite version")
+print(" ")
+print(" ")
+print("-------------------------------------")
+print("| Common Errors and How to Fix Them |")
+print("-------------------------------------")
+print(" ")
+print("---ModuleNotFoundError pygame")
+print("To fix this error, install all required modules as stated above.")
+print(" ")
+print(" ")
+print("---ModuleNotFoundError scripts.housekeeping")
+print("Go to Tools -> Manage Packages and uninstall 'scripts', then install required modules as stated above")
+print(" ")
+print(" ")
+print("---AttributeError pygame.Surface")
+print("Manually update your installed modules in Manage Packages and checking all installed packages on the left")
+print(" ")
+print(" ")
+print("---FileNotFoundError: [WinError 2]")
+print("Normal message, just ignore")
+print(" ")
+print(" ")
+print("---Memory Error ")
+print("Currently there is not fix for this, please use the Lite or Extra Lite version")
+print(" ")
+print(" ")
+print("------------------------")
+print("|  Thanks for Playing! |")
+print("------------------------")
+print("============================================================================================================")
+print("============================================================================================================")
 
 # Load game
 from scripts.game_structure.load_cat import load_cats, version_convert
@@ -256,9 +298,16 @@ del load_data
 
 start_screen.screen_switches()
 
+
+#Version Number
+if get_version_info().version_number == "":
+    _display_version = VERSION_NAME
+else:
+    _display_version = get_version_info().version_number[0:8]
+
 if game.settings['fullscreen']:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((1500, 1350), (-1, -1)), get_version_info().version_number[0:8],
+        pygame.Rect((1500, 1350), (-1, -1)), _display_version,
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(
@@ -266,7 +315,7 @@ if game.settings['fullscreen']:
          1400 - version_number.get_relative_rect()[3]))
 else:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((700, 650), (-1, -1)), get_version_info().version_number[0:8],
+        pygame.Rect((700, 650), (-1, -1)), _display_version,
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(

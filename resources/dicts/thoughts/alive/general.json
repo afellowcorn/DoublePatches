@@ -807,6 +807,14 @@
             "Is helping to reinforce the camp wall with brambles",
             "Is daydreaming about having a mate and kits someday",
             "Had quite the adventure today",
+            "Is thinking about how cool it will be when {PRONOUN/m_c/subject} are a warrior",
+            "Wants to become a fierce warrior someday",
+            "Wants to learn as many fighting techniques as {PRONOUN/m_c/subject} can",
+            "Wants to show {PRONOUN/m_c/poss} mentor that {PRONOUN/m_c/subject} {VERB/m_c/are/is} smart, skilled, and talented",
+            "Wants to earn {PRONOUN/m_c/poss} warrior name",
+            "Is determined to master a hunting technique by dusk",
+            "Can see how busy {PRONOUN/m_c/poss} mentor is",
+            "Wants to be taught an advanced hunting move",
             "Has been training very hard recently",
             "Had a very strange dream",
             "Is feeling proud",
@@ -817,9 +825,7 @@
             "Caught THE BIGGEST mouse EVER, like, seriously!"
         ],
         "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "apprentice"
         ]
     },
     {
@@ -853,10 +859,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
-        "relationship_constraint":[
+        "relationship_constraint": [
             "app/mentor"
         ]
     },
@@ -1139,12 +1145,6 @@
         ],
         "main_trait_constraint": [
             "vengeful"
-        ],
-        "random_living_status":[
-            "living"
-        ],
-        "random_status_constraint":[
-            "apprentice"
         ]
     },
     {

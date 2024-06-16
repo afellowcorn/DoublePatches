@@ -355,7 +355,6 @@
             "Is clawing up moss for fun",
             "Is asking what deathberries look like... for safety reasons of course",
             "Hopes to get a scar from battle"
-
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -396,7 +395,27 @@
         "main_trait_constraint": [
             "ambitious"
         ]
-    }, 
+    },
+    {
+        "id": "ambitious_warrior_apprentice_to_ambitious_app",
+        "thoughts": [
+            "Challenges r_c to a hunting contest",
+            "Is arguing with r_c over who will be deputy",
+            "Is arguing with r_c over who will be a warrior first",
+            "Is silently glaring at {PRONOUN/m_c/poss} rival, r_c",
+            "Wants to spar with r_c and no one else",
+            "Is being extremely competitive with r_c"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ],
+        "random_trait_constraint": [
+            "ambitious"
+        ]
+    },
     {
         "id": "childish_warrior_apprentice",
         "thoughts": [
@@ -424,7 +443,694 @@
         "random_status_constraint":[
             "elder"
         ]
+    },
+    {
+        "id": "troublesome_apprentice",
+        "thoughts": [
+            "Is stuck in camp all day after getting into trouble again",
+            "Is arguing with {PRONOUN/m_c/poss} mentor over something small",
+            "Is practicing battle moves in camp and getting in the way",
+            "Accidentally caused more damage to the den {PRONOUN/m_c/subject} {VERB/m_c/were/was} supposed to be fixing",
+            "Is making a mess in the apprentice den",
+            "Is being scolded for {PRONOUN/m_c/poss} behaviour... again"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ]
+    },
+    {
+        "id": "troublesome_apprentice_to_app",
+        "thoughts": [
+            "Is avoiding trouble by blaming r_c",
+            "Is trying to convince r_c to skip training",
+            "Is playing yet another joke on r_c",
+            "Is teasing r_c for not being a warrior yet",
+            "Is spreading a rumor about r_c failing an assessment",
+            "Is taking the soft lining out of r_c's nest"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "lonesome_apprentice",
+        "thoughts": [
+            "Wants to be friends with another apprentice",
+            "Is sulking about",
+            "Is focused on training to avoid feeling lonely",
+            "Wants to have someone to train with",
+            "Is feeling very lonely",
+            "Is trying to be friends with r_c but doesn't think it is working"
+        ],
+        "main_trait_constraint": [
+            "lonesome"
+        ]
+    },
+    {
+        "id": "lonesome_apprentice_to_app",
+        "thoughts": [
+            "Wishes r_c would be friends with {PRONOUN/m_c/object}",
+            "Wants to train with r_c but is too nervous to ask",
+            "Is staying away from the other apprentices",
+            "Is feeling ignored by the other apprentices",
+            "Is feeling like {PRONOUN/m_c/subject} don't fit in with the other apprentices"
+        ],
+        "main_trait_constraint": [
+            "lonesome"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "cold_apprentice",
+        "thoughts": [
+            "Doesn't care much about r_c",
+            "Is only focused on finishing {PRONOUN/m_c/poss} training",
+            "Isn't here to make friends",
+            "Is only caring about {PRONOUN/m_c/self}",
+            "Is spending a lot of time alone"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ]
+    },
+    {
+        "id": "cold_apprentice_to_app",
+        "thoughts": [
+            "Is rejecting an offer to train with r_c",
+            "Is ignoring r_c",
+            "Doesn't want to train with r_c again",
+            "Isn't saying a word to r_c when they are on patrol together",
+            "Is sent on a hunting patrol with r_c, but splits up to hunt alone instead"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "playful_apprentice",
+        "thoughts": [
+            "Is happy to turn every task into a game",
+            "Is distracted easily on patrols",
+            "Is wishing to be a kit again",
+            "Is caught frolicking around outside of camp instead of hunting",
+            "Is looking forward to another fun training session"
+        ],
+        "main_trait_constraint": [
+            "playful"
+        ]
+    },
+    {
+        "id": "charismatic_apprentice",
+        "thoughts": [
+            "Smoothly avoids getting in trouble by coming up with a good excuse",
+            "Is catching something extra for r_c, as promised",
+            "Is always a welcome addition to any patrol",
+            "Is very cheerful today",
+            "Is a little late to training after chatting with r_c"
+        ],
+        "main_trait_constraint": [
+            "charismatic"
+        ]
+    },
+    {
+        "id": "daring_apprentice",
+        "thoughts": [
+            "Is ready for a fight with a badger today",
+            "Is begging to go on a border patrol",
+            "Is offering to hunt snakes",
+            "Is never afraid of any challenge",
+            "Is trying to convince r_c that {PRONOUN/m_c/subject} could beat a fox"
+        ],
+        "main_trait_constraint": [
+            "daring"
+        ]
+    },
+    {
+        "id": "nervous_apprentice",
+        "thoughts": [
+            "Is trying to avoid training today",
+            "Is worried about battle training",
+            "Doesn't want to learn any more fighting moves",
+            "Is worried about an upcoming assessment",
+            "Is holding back tears",
+            "Missed an easy catch because {PRONOUN/m_c/subject} hesitated",
+            "Is worried that {PRONOUN/m_c/subject} will never be a warrior",
+            "Is always in the back of the patrol",
+            "Is hiding in the apprentice den",
+            "Was startled by an unfamiliar sound",
+            "Is dreading an upcoming gathering"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ]
+    },
+    {
+        "id": "righteous_apprentice",
+        "thoughts": [
+            "Is vowing to always do the right thing",
+            "Is wondering why c_n doesn't do more to help the other clans",
+            "Would never turn {PRONOUN/m_c/poss} back on anyone who needs help",
+            "Is thinking of ways the clans could work together",
+            "Is planning to help r_c today",
+            "Is shocked that any cat would think about eating kittypet food"
+        ],
+        "main_trait_constraint": [
+            "righteous"
+        ]
+    },
+    {
+        "id": "strict_apprentice",
+        "thoughts": [
+            "Is always following the Warrior Code",
+            "Is too busy completing a task to help r_c with something small",
+            "Is always on time",
+            "Is focused on training and doesn't have time to play",
+            "Is asking for another task instead of relaxing"
+        ],
+        "main_trait_constraint": [
+            "strict"
+        ]
+    },
+    {
+        "id": "strict_apprentice_to_app",
+        "thoughts": [
+            "Is scolding r_c for trying to shirk work",
+            "Is frowning at r_c's idea to sneak out tonight",
+            "Is reminding r_c not to miss the dawn patrol",
+            "Is going to report r_c for something trivial",
+            "Is accused of being a tattle-tail by r_c",
+            "Is preventing the other apprentices from playing in the den"
+        ],
+        "main_trait_constraint": [
+            "strict"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "compassionate_apprentice",
+        "thoughts": [
+            "Is making sure the clan is fed",
+            "Is looking out for r_c",
+            "Is happy to help the clan any way {PRONOUN/m_c/subject} can",
+            "Is always the first to volunteer"
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ]
+    },
+    {
+        "id": "compassionate_apprentice_to_app",
+        "thoughts": [
+            "Is making sure r_c isn't falling behind",
+            "Is helping r_c learn a difficult fighting technique",
+            "Is cheering for r_c after watching {PRONOUN/m_c/object} make a difficult catch",
+            "Is reassuring r_c that things will be okay",
+            "Is making sure r_c is doing well at hunting",
+            "Is happy to help r_c with a little extra training"
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "adventurous_apprentice",
+        "thoughts": [
+            "Wants to go on a journey someday",
+            "Is asking to see what is outside the territory",
+            "Wants to do something heroic",
+            "Is begging to go on an important mission",
+            "Is planning something big"
+        ],
+        "main_trait_constraint": [
+            "adventurous"
+        ]
+    },
+    {
+        "id": "calm_apprentice",
+        "thoughts": [
+            "Is relaxed and unworried",
+            "Is calmly assessing a complicated situation",
+            "Is taking {PRONOUN/m_c/poss} time",
+            "Is ready to face the day",
+            "Is a talented fisher"
+        ],
+        "main_trait_constraint": [
+            "calm"
+        ]
+    },
+    {
+        "id": "careful_apprentice",
+        "thoughts": [
+            "Is making sure to approach all situations with as much information as possible",
+            "Is a patient hunter",
+            "Is staying far away from the thunderpath",
+            "Is watching out for anything out of place",
+            "Is avoiding hunting snakes"
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ]
+    },
+    {
+        "id": "faithful_apprentice",
+        "thoughts": [
+            "Is sure everything will turn out okay",
+            "Is thankful to have StarClan's guidance",
+            "Is thinking about dedicating {PRONOUN/m_c/poss} life to a future mate",
+            "Is thinking about family life",
+            "Is a reliable friend"
+        ],
+        "main_trait_constraint": [
+            "faithful"
+        ]
+    },
+    {
+        "id": "loving_apprentice",
+        "thoughts": [
+            "Is just happy to be here",
+            "Doesn't need an excuse to care for {PRONOUN/m_c/poss} clanmates",
+            "Is checking on r_c, purring happily"
+        ],
+        "main_trait_constraint": [
+            "loving"
+        ]
+    },
+    {
+        "id": "loving_apprentice_to_app",
+        "thoughts": [
+            "Is asking r_c to share tongues",
+            "Purrs at r_c",
+            "Is delighted to see r_c",
+            "Is gently comforting r_c"
+        ],
+        "main_trait_constraint": [
+            "loving"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "responsible_apprentice",
+        "thoughts": [
+            "Is making sure {PRONOUN/m_c/poss} tasks are done",
+            "Is checking the amount of fresh-kill available for the clan",
+            "Is taking care of things without being asked to",
+            "Is a wonderful apprentice",
+            "Is always well-behaved"
+        ],
+        "main_trait_constraint": [
+            "responsible"
+        ]
+    },
+    {
+        "id": "shameless_apprentice",
+        "thoughts": [
+            "Is sleeping in today",
+            "Is not cleaning {PRONOUN/m_c/poss} messy pelt",
+            "Is particularly disrespectful today",
+            "Isn't bothered by {PRONOUN/m_c/poss} sloppy hunting crouch",
+            "Is in trouble after not catching a single piece of prey while out hunting",
+            "Doesn't care what r_c thinks of {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "shameless"
+        ]
+    },
+    {
+        "id": "sneaky_apprentice",
+        "thoughts": [
+            "Is very quiet",
+            "Is planning to sneak out again tonight",
+            "Never reveals too many details",
+            "Is being vague about where {PRONOUN/m_c/subject} {VERB/m_c/were/was} all day",
+            "Is covered in something smelly to hide {PRONOUN/m_c/poss} scent",
+            "Is standing right behind r_c, who doesn't notice a thing"
+        ],
+        "main_trait_constraint": [
+            "sneaky"
+        ]
+    },
+    {
+        "id": "strange_apprentice",
+        "thoughts": [
+            "Is approaching things differently",
+            "Is thinking about what it would be like to be a cloud",
+            "Is suggesting to try walking backwards to hunt more efficiently",
+            "Is caught staring at a den wall for a long time",
+            "Is thinking about taking some soft twoleg things to make a new nest",
+            "Is asking to sleep in the clearing"
+        ],
+        "main_trait_constraint": [
+            "strange"
+        ]
+    },
+    {
+        "id": "vengeful_apprentice",
+        "thoughts": [
+            "Is plotting something for r_c",
+            "Is thinking about the cats that wronged {PRONOUN/m_c/object}",
+            "Thinks that justice is not being carried out around c_n",
+            "Is tired of being wronged and doing nothing about it",
+            "Is often growling in {PRONOUN/m_c/poss} sleep",
+            "Is muttering to {PRONOUN/m_c/self}"
+        ],
+        "main_trait_constraint": [
+            "vengeful"
+        ]
+    },
+    {
+        "id": "wise_apprentice",
+        "thoughts": [
+            "Is acting very mature for {PRONOUN/m_c/poss} age",
+            "Is seemingly wise beyond {PRONOUN/m_c/poss} moons",
+            "Is giving insight to r_c",
+            "Is helping r_c solve a difficult issue",
+            "Is making a great suggestion"
+        ],
+        "main_trait_constraint": [
+            "wise"
+        ]
+    },
+    {
+        "id": "arrogant_apprentice",
+        "thoughts": [
+            "Is claiming {PRONOUN/m_c/subject} already passed {PRONOUN/m_c/poss} assessment",
+            "Is trying to convince r_c {PRONOUN/m_c/subject} took on a horde of foxes alone",
+            "Claims {PRONOUN/m_c/subject} would never lose a fight",
+            "Is boasting about something as usual",
+            "Is gloating over a recent victory"
+        ],
+        "main_trait_constraint": [
+            "arrogant"
+        ]
+    },
+    {
+        "id": "arrogant_apprentice_to_app",
+        "thoughts": [
+            "Is looking down on r_c's progress",
+            "Is telling r_c to stay out of the way",
+            "Is saying r_c is a worse apprentice than {PRONOUN/m_c/object}",
+            "Says {PRONOUN/m_c/subject} {VERB/m_c/are/is} the best apprentice",
+            "Has no doubt {PRONOUN/m_c/subject} will be made a warrior before r_c"
+        ],
+        "main_trait_constraint": [
+            "arrogant"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "competitive_apprentice",
+        "thoughts": [
+            "Is comparing {PRONOUN/m_c/self} to r_c",
+            "Is planning to surpass all expectations",
+            "Wants to be the best hunter in all of c_n"
+        ],
+        "main_trait_constraint": [
+            "competitive"
+        ]
+    },
+    {
+        "id": "competitive_apprentice_to_app",
+        "thoughts": [
+            "Is comparing {PRONOUN/m_c/self} to r_c",
+            "Is planning to surpass all expectations",
+            "Is challenging r_c to a fight",
+            "Wants to outshine r_c",
+            "Is always challenging r_c to some sort of contest"
+        ],
+        "main_trait_constraint": [
+            "competitive"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "grumpy_apprentice",
+        "thoughts": [
+            "Is growling at r_c",
+            "Is in another one of {PRONOUN/m_c/poss} moods",
+            "Doesn't want to be bothered",
+            "Is seen swiping at r_c",
+            "Is grumbling around camp today"
+        ],
+        "main_trait_constraint": [
+            "grumpy"
+        ]
+    },
+    {
+        "id": "cunning_apprentice",
+        "thoughts": [
+            "Is planning a way to avoid a task {PRONOUN/m_c/subject} don't like",
+            "Is quick-witted",
+            "Is known to think on {PRONOUN/m_c/poss} paws",
+            "Is creating {PRONOUN/m_c/poss} own battle pose",
+            "Is practicing ambush hunting styles"
+        ],
+        "main_trait_constraint": [
+            "cunning"
+        ]
+    },
+    {
+        "id": "cunning_apprentice_to_app",
+        "thoughts": [
+            "Is tricking r_c into doing a task for {PRONOUN/m_c/object}",
+            "Is swapping tasks with r_c",
+            "Is taking credit for something r_c did today"
+        ],
+        "main_trait_constraint": [
+            "cunning"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "oblivious_apprentice",
+        "thoughts": [
+            "Missed a very easy catch today",
+            "Is never paying attention",
+            "Is falling for an obvious trick",
+            "Is very empty headed",
+            "Forgot what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing"
+        ],
+        "main_trait_constraint": [
+            "oblivious"
+        ]
+    },
+    {
+        "id": "gloomy_apprentice",
+        "thoughts": [
+            "Isn't happy being an apprentice",
+            "Is staring at the ground",
+            "Is sighing sadly",
+            "Is inconsolable today",
+            "Is silently crying to {PRONOUN/m_c/self}"
+        ],
+        "main_trait_constraint": [
+            "gloomy"
+        ]
+    },
+    {
+        "id": "sincere_apprentice",
+        "thoughts": [
+            "Is very honest",
+            "Is telling r_c the truth",
+            "Is being open and honest with r_c"
+        ],
+        "main_trait_constraint": [
+            "sincere"
+        ]
+    },
+    {
+        "id": "flamboyant_apprentice",
+        "thoughts": [
+            "Is dazzling r_c with {PRONOUN/m_c/poss} antics",
+            "Is looking amazing as usual",
+            "Is particularly charming today",
+            "Is one of the cutest cats in c_n"
+        ],
+        "main_trait_constraint": [
+            "flamboyant"
+        ]
+    },
+    {
+        "id": "rebellious_apprentice",
+        "thoughts": [
+            "Is defiantly ignoring r_c",
+            "Is refusing to train",
+            "Is out relaxing instead of working",
+            "Isn't listening to r_c",
+            "Is ignoring {PRONOUN/m_c/poss} apprentice duties"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ]
+    },
+    {
+        "id": "rebellious_apprentice_authority",
+        "thoughts": [
+            "Is ignoring a direct order from r_c",
+            "Doesn't care that r_c is in charge, and ignores them completely",
+            "Is doing the opposite of what r_c told {PRONOUN/m_c/object} to do",
+            "Is disrespecting r_c"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ],
+        "random_status_constraint": [
+            "leader",
+            "deputy"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "rebellious_apprentice_mentor",
+        "thoughts": [
+            "Is ignoring r_c's training instructions",
+            "Dislikes having r_c for a mentor",
+            "Is rolling {PRONOUN/m_c/poss} eyes at r_c",
+            "Is arguing with r_c again",
+            "Is refusing to listen to r_c"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ],
+        "random_relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "nervous_apprentice_to_meany",
+        "thoughts": [
+            "Is particularly scared of r_c",
+            "Is shaking at the sight of r_c",
+            "Is doing everything they can to avoid r_c",
+            "Is admitting {PRONOUN/m_c/subject} {VERB/m_c/are/is} terrified of r_c",
+            "Is frozen after discovering r_c is watching {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ],
+        "random_trait_constraint": [
+            "bloodthirsty",
+            "fierce",
+            "cold",
+            "vengeful"
+        ]
+    },
+    {
+        "id": "compassionate_apprentice_to_sad",
+        "thoughts": [
+            "Is taking extra time to check on r_c",
+            "Is doing what {PRONOUN/m_c/subject} to make r_c feel better today",
+            "Is asking r_c what's wrong",
+            "Notices r_c is having a lot of trouble lately",
+            "Is thinking of ways to cheer r_c up"
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ],
+        "random_trait_constraint": [
+            "gloomy",
+            "grumpy",
+            "insecure",
+            "nervous"
+        ]
+    },
+    {
+        "id": "righteous_apprentice_to_meany",
+        "thoughts": [
+            "Has a bad feeling about r_c",
+            "Is making sure r_c is not up to anything",
+            "Is following r_c at a distance",
+            "Is sure r_c is planning something nefarious",
+            "Is suspicious of the way r_c has been acting lately"
+        ],
+        "main_trait_constraint": [
+            "righteous"
+        ],
+        "random_trait_constraint": [
+            "bloodthirsty",
+            "fierce",
+            "cold",
+            "vengeful"
+        ]
+    },
+    {
+        "id": "apprentice_siblings",
+        "thoughts": [
+            "Is happy to be able to train with r_c",
+            "Is looking out for r_c",
+            "Is asking to go on patrol with r_c",
+            "Is asking to train with r_c",
+            "Is sleeping in the nest next to r_c"
+        ],
+        "random_relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "apprentice_younger_sibling",
+        "thoughts": [
+            "Is promising to look out for r_c",
+            "Is doting on {PRONOUN/m_c/poss} younger sibling, r_c",
+            "Wants to find something nice for r_c while on patrol"
+        ],
+        "random_relationship_constraint": [
+            "siblings"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "apprentice_parent",
+        "thoughts": [
+            "Is trying to make r_c proud",
+            "Is wondering if r_c is proud of {PRONOUN/m_c/poss} training",
+            "Is thinking about {PRONOUN/m_c/poss} time in the nursery with r_c"
+        ],
+        "random_relationship_constraint": [
+            "parent/child"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_status_constraint": [
+            "warrior",
+	        "mediator",
+	        "medicine cat ",
+	        "deputy",
+	        "leader",
+	        "elder"
+        ]
     }
-           
-    
 ]

@@ -1,26 +1,37 @@
-<strong>v0.11.2</strong>
-- Fix: ensure that the changelog is read as UTF-8
-- Fix: issue with manual feeding with tactic "low nutrition first"
-- Fix: edge case of a cat has the exiled status, but is not outside
+<strong>Brindle Update (8/7/23)</strong>
+- New brindle pelt design
 
-<strong>v0.11.1</strong>
-- Fix: The changelog. Yep, just the changelog. Yes, it happened again-
+<strong>Cow Update (6/27/23)</strong>
+- Added 5 white patches from unmodded clangen:
+    'OWL', 'WOODPECKER', 'BOOTS', 'MISS', 'BUB'
+- Added and renamed 2 white patches from unmodded clangen:
+    'COWTHREE', 'COWFOUR'
+- Added 7 new white patches:
+    'COWFIVE', 'COWSIX', 'COWSEVEN', 'COWEIGHT', 'COWNINE', 'COWTEN', 'COWELEVEN'
 
-<strong>v0.11.0</strong>
-- Feature: Freshkill pile & nutrition system
-- Feature: "Destroy accessory" button
-- Content: Lakeside Forest Background
-- Content: Murder for the new year
-- Content: expanded scars: "HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "TOE", "BEAKSIDE", "CATBITETWO", "SNAKETWO", "FOUR"
-    Expanded tortie: 'FRECKLED' white patches: 'BLAZEMASK', 'TEARS'
-- Content: Sibling and constrained patrols
-- Content: weights and mates
-- Content: expanded war events
-- Content: more patrols
-- QOL: Cat List UI Update
-- QOL: same sex setting update
-- QOL: update for freshkill switch
-- QOL: Patrol type decision enabled in classic
-- QOL: updated credits list
-- QOL:  change to poetry
-- Plus many more bug fixes, tweaks to events and patrols, and more! Aprils fools - we made an actual game update.
+<strong>Accessory Update 2 (6/9/23)</strong>
+- Added 12 new accessories
+- Fixed issue with split eye colors disappearing
+
+<strong>White/Tortie Patches Update (6/6/23)</strong>
+- Added 8 white patches from unmodded clangen:
+    'BLEACHED', 'SAVANNAH', 'FADESPOTS', 'SHIBAINU', 'DAPPLEPAW', 'DIVA', 'BEARD', 'TOPCOVER'
+- Added 5 new white patches:
+    'TIDAL', 'DIAMOND', 'ECLIPSE', 'SNOWSTORM', 'PEPPER'
+- Added 11 tortie patches from unmodded clangen:
+    'STREAK', 'MASK', 'CHIMERA', 'CHEST', 'ARMTAIL', 'SMUDGED', 'DAUB', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET'
+- Added 1 new tortie patch:
+    'VIPER'
+
+<strong>Kit Thoughts Update (5/24/23)</strong>
+- Added 200 new kit thoughts including thoughts for the traits:
+    Lonesome, Attention-seeker, Noisy, Insecure, Polite, Know-it-all, and Bossy
+- Added 118 new warrior apprentice thoughts
+- Added 41 new med cat apprentice thoughts
+- Added 17 mediator apprentice thoughts
+
+<strong>Accessory Update (5/20/23)</strong>
+- Added 12 new accessories
+- Fixed some spelling errors
+
+<u>Thanks for playing Moss Mod!</u>

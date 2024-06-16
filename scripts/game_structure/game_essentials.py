@@ -413,6 +413,7 @@ class Game():
 
         clan_cats = []
         for inter_cat in self.cat_class.all_cats.values():
+
             cat_data = inter_cat.get_save_dict()
             clan_cats.append(cat_data)
 

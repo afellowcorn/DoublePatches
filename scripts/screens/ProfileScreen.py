@@ -2060,33 +2060,32 @@ class ProfileScreen(Screens):
 
         order = ['beach', 'forest', 'mountainous', 'nest', 'plains', 'SC/DF']
 
-
-        biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
-        
-        
-        biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
+        biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 260, 2400, 260)).convert_alpha()
 
         offset = 0
         if light_dark == "light":
-            offset = 80
+
+            offset = 300
                 
+
         if the_cat.df:
-            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
-            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 260, 2400, 260))
+            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 300, 260)), (240, 210))
         elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
-            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
-            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 260, 2400, 260))
+            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(600 + offset, 0, 300, 260)), (240, 210))
         else:
-            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 260, 2400, 260)).convert_alpha()
             season_x = {
                 "greenleaf": 0 + offset,
-                "leaf-bare": 160 + offset,
-                "leaf-fall": 320 + offset,
-                "newleaf": 480 + offset
+                "leaf-bare": 600 + offset,
+                "leaf-fall": 1200 + offset,
+                "newleaf": 1800 + offset
             }
             
             return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(
-                season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 80, 70)), (240, 210))
+                season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 300, 260)), (240, 210))
 
     def on_use(self):
         pass
+

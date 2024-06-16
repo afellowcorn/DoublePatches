@@ -97,7 +97,9 @@
         "other_cat_skill": null,
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -122,7 +124,9 @@
         "other_cat_skill": null,
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -151,9 +155,12 @@
             "attention-seeker"
         ],
         "other_cat_skill": null,
+
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -176,7 +183,9 @@
         "other_cat_skill": null,
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -337,6 +346,18 @@
         ],
         "event_text": "m_c is being comforted by r_c after having nightmares about the big, bad o_c cats."
     },
+      {
+    "camp": "any",
+    "tags": ["Newleaf", "Greenleaf", "Leaf-fall"],
+    "event_text": "m_c cant seem to get a pesky acc_singular off {PRONOUN/m_c/poss} face.",
+    "accessories": ["LUNA MOTH", "ATLAS MOTH"]
+  },
+  {
+    "camp": "any",
+    "tags": ["Newleaf", "Greenleaf", "Leaf-fall"],
+    "event_text": "m_c is always surrounded by a acc_singular.",
+    "accessories": ["FIREFLIES", "BUTTERFLIES"]
+  },
     {
         "camp": "any",
         "tags": [

@@ -52,10 +52,10 @@ def json_load():
 
     old_tortie_patches = convert["old_tortie_patches"]
 
+
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
-            
             new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
@@ -86,6 +86,7 @@ def json_load():
                 colour=cat["pelt_color"],
                 eye_color=cat["eye_colour"],
                 eye_colour2=cat["eye_colour2"] if "eye_colour2" in cat else None,
+                eye_colour3=cat["eye_colour3"] if "eye_colour3" in cat else None,
                 paralyzed=cat["paralyzed"],
                 kitten_sprite=cat["sprite_kitten"] if "sprite_kitten" in cat else cat["spirit_kitten"],
                 adol_sprite=cat["sprite_adolescent"] if "sprite_adolescent" in cat else cat["spirit_adolescent"],

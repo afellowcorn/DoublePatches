@@ -132,7 +132,9 @@ class Romantic_Events():
         if cat_from.ID == cat_to.ID:
             return False
 
+
         relevant_dict = deepcopy(Romantic_Events.ROMANTIC_INTERACTIONS)
+
         if cat_to.ID in cat_from.mate and not cat_to.dead:
             relevant_dict = deepcopy(Romantic_Events.MATE_INTERACTIONS)
 
@@ -358,7 +360,7 @@ class Romantic_Events():
         # Determine if this is a nice breakup or a fight breakup
         #TODO - make this better
         had_fight = not int(random.random() * 3)
-    
+
         #TODO : more varied breakup text.
         cat_from.unset_mate(cat_to, breakup=False)
         
@@ -388,12 +390,14 @@ class Romantic_Events():
             relationship_from.dislike += 10
         
         
+
         if had_fight:
             text = f"{cat_from.name} and {cat_to.name} had a huge fight and broke up."
         else:
             text = f"{cat_from.name} and {cat_to.name} broke up."
         game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
         return True
+
 
     @staticmethod
     def handle_confession(cat_from) -> bool:

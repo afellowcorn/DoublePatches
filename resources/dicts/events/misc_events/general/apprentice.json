@@ -180,7 +180,9 @@
         "event_text": "m_c gets dared to hunt outside in the snow alone, and returns with acc_singular in {PRONOUN/m_c/poss} pelt.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -499,5 +501,31 @@
             "war"
         ],
         "event_text": "m_c feels like {PRONOUN/m_c/subject} might be growing up too fast in the midst of war."
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c cant seem to get a pesky acc_singular off {PRONOUN/m_c/poss} face.",
+        "accessories": [
+            "LUNA MOTH",
+            "ATLAS MOTH"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c is always surrounded by a acc_singular.",
+        "accessories": [
+            "FIREFLIES",
+            "BUTTERFLIES"
+        ]
     }
 ]
