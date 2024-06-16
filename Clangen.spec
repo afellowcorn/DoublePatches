@@ -63,5 +63,5 @@ app = BUNDLE(
     name='MossMod.app',
     icon='resources/images/icon.png',
     bundle_identifier='com.sablesteel.clangen',
-    version='0.7.5' # imo we should give dev builds .5
+    version='0.1.2' # imo we should give dev builds .5
 )

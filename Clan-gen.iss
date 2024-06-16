@@ -5,7 +5,7 @@
 
 ; Update this line to the date of the latest Clan-gen (fan edit) by Sablesteel release 
 ; (or choose your own version-numbering scheme)
-#define ApplicationVersion "2022.08.10"
+#define ApplicationVersion "2024.06.16"
 
 #define ApplicationURL "https://sablesteel.itch.io/clan-gen-fan-edit"
 

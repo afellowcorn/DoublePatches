@@ -1,11 +1,11 @@
 [[actions]]
 name = "play"
 platform = "windows"
-path = "MossMod/MossMod.exe"
+path = "MossMod_DoublePatches/MossMod.exe"
 args = ["--launched-through-itch"]
 
 [[actions]]
 name = "play"
 platform = "linux"
-path = "MossMod/MossMod"
+path = "MossMod_DoublePatches/MossMod"
 args = ["--launched-through-itch"]

@@ -7,7 +7,8 @@ from configparser import ConfigParser
 from platformdirs import user_data_dir
 logger = logging.getLogger(__name__)
 
-VERSION_NAME = "0.9.0"
+VERSION_NAME = "0.11.2"
+MOD_VERSION = "1.2"
 # This is saved in the Clan save-file, and is used for save-file converstion.
 SAVE_VERSION_NUMBER = 3
 
@@ -16,6 +17,7 @@ def get_version_info():
     if get_version_info.instance is None:
         is_source_build = False
         version_number = VERSION_NAME
+        mod_version = MOD_VERSION
         release_channel = False
         upstream = ""
         is_itch = False
@@ -50,7 +52,7 @@ def get_version_info():
             is_sandboxed = True
 
         get_version_info.instance = VersionInfo(
-            is_source_build, release_channel, version_number, upstream, is_itch, is_sandboxed, git_installed, is_thonny)
+            is_source_build, release_channel, version_number, mod_version, upstream, is_itch, is_sandboxed, git_installed, is_thonny)
     return get_version_info.instance
 
 
@@ -58,10 +60,11 @@ get_version_info.instance = None
 
 
 class VersionInfo:
-    def __init__(self, is_source_build: bool, release_channel: str, version_number: str, upstream: str, is_itch: bool, is_sandboxed: bool, git_installed: bool, is_thonny: bool):
+    def __init__(self, is_source_build: bool, release_channel: str, version_number: str, mod_version: str, upstream: str, is_itch: bool, is_sandboxed: bool, git_installed: bool, is_thonny: bool):
         self.is_source_build = is_source_build
         self.release_channel = release_channel
         self.version_number = version_number
+        self.mod_version = mod_version
         self.upstream = upstream
         self.is_itch = is_itch
         self.is_sandboxed = is_sandboxed

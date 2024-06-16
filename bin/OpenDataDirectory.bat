@@ -1,1 +1,1 @@
-start %LocalAppData%\MossMod\MossMod
+start %LocalAppData%\ClanGen\MossMod_DoublePatches

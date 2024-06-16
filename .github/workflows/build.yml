@@ -59,7 +59,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: tar -caf MossMod_Linux64_glibc2.31+.tar.xz -C dist MossMod
+        run: tar -caf MossMod_Linux64_glibc2.31+.tar.xz -C dist MossMod_DoublePatches
       - uses: actions/upload-artifact@v3
         with:
           name: MossMod_Linux64_glibc2.31+.tar.xz
@@ -153,7 +153,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: tar -caf MossMod_Linux64_glibc2.35+.tar.xz -C dist MossMod
+        run: tar -caf MossMod_Linux64_glibc2.35+.tar.xz -C dist MossMod_DoublePatches
       - uses: actions/upload-artifact@v3
         with:
           name: MossMod_Linux64_glibc2.35+.tar.xz
@@ -270,8 +270,8 @@ jobs:
       - name: Create archive (.zip)
         run: |
 
-          cp dist/MossMod/_internal/.itch.toml dist/ 
-          tar.exe -a -c -f MossMod_Win32.zip -C dist MossMod .itch.toml
+          cp dist/MossMod_DoublePatches/_internal/.itch.toml dist/ 
+          tar.exe -a -c -f MossMod_Win32.zip -C dist MossMod_DoublePatches .itch.toml
 
       - uses: actions/upload-artifact@v3
         with:
@@ -396,8 +396,8 @@ jobs:
       - name: Create archive (.zip)
         run: |
 
-          cp dist/MossMod/_internal/.itch.toml dist/ 
-          tar.exe -a -c -f MossMod_Win64.zip -C dist MossMod .itch.toml
+          cp dist/MossMod_DoublePatches/_internal/.itch.toml dist/ 
+          tar.exe -a -c -f MossMod_Win64.zip -C dist MossMod_DoublePatches .itch.toml
 
       - uses: actions/upload-artifact@v3
         with:
@@ -522,8 +522,8 @@ jobs:
       - name: Create archive (.zip)
         run: |
 
-          cp dist/MossMod/_internal/.itch.toml dist/ 
-          tar.exe -a -c -f MossMod_Win64_Windows10+.zip -C dist MossMod .itch.toml
+          cp dist/MossMod_DoublePatches/_internal/.itch.toml dist/ 
+          tar.exe -a -c -f MossMod_Win64_Windows10+.zip -C dist MossMod_DoublePatches .itch.toml
 
       - uses: actions/upload-artifact@v3
         with:
@@ -623,7 +623,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: rm -r dist/MossMod
+        run: rm -r dist/MossMod_DoublePatches
       - name: Install appdmg
         run: "npm install -g appdmg"
       - name: Generate .dmg
