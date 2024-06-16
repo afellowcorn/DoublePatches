@@ -1,11 +1,11 @@
 ; Clan-gen Installer Script
 
-#define ApplicationBaseName "Clan-gen"
-#define ApplicationFullName "Clan-gen (fan edit) by Sablesteel"
+#define ApplicationBaseName "DoublePatches"
+#define ApplicationFullName "DoublePatches_Clan-gen (fan edit)"
 
 ; Update this line to the date of the latest Clan-gen (fan edit) by Sablesteel release 
 ; (or choose your own version-numbering scheme)
-#define ApplicationVersion "2022.08.10"
+#define ApplicationVersion "2024.06.16"
 
 #define ApplicationURL "https://sablesteel.itch.io/clan-gen-fan-edit"
 
