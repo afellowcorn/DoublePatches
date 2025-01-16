@@ -13,10 +13,10 @@ class Sprites:
     clan_symbols = []
 
     def __init__(self):
-        """Class that handles and hold all spritesheets. 
+        """Class that handles and hold all spritesheets.
         Size is normally automatically determined by the size
-        of the lineart. If a size is passed, it will override 
-        this value. """
+        of the lineart. If a size is passed, it will override
+        this value."""
         self.symbol_dict = None
         self.size = None
         self.spritesheets = {}
@@ -30,13 +30,15 @@ class Sprites:
 
     def load_tints(self):
         try:
-            with open("sprites/dicts/tint.json", 'r') as read_file:
+            with open("sprites/dicts/tint.json", "r", encoding="utf-8") as read_file:
                 self.cat_tints = ujson.loads(read_file.read())
         except IOError:
             print("ERROR: Reading Tints")
 
         try:
-            with open("sprites/dicts/white_patches_tint.json", 'r') as read_file:
+            with open(
+                "sprites/dicts/white_patches_tint.json", "r", encoding="utf-8"
+            ) as read_file:
                 self.white_patches_tints = ujson.loads(read_file.read())
         except IOError:
             print("ERROR: Reading White Patches Tints")
@@ -59,6 +61,7 @@ class Sprites:
                    sprites_x=6,
                    sprites_y=8,
                    no_index=False):  # pos = ex. (2, 3), no single pixels
+
         """
         Divide sprites on a spritesheet into groups of sprites that are easily accessible
         :param spritesheet: Name of spritesheet file
@@ -87,7 +90,8 @@ class Sprites:
                         self.spritesheets[spritesheet],
                         group_x_ofs + x * self.size,
                         group_y_ofs + y * self.size,
-                        self.size, self.size
+                        self.size,
+                        self.size,
                     )
 
                 except ValueError:
@@ -95,8 +99,7 @@ class Sprites:
                     print(f"WARNING: nonexistent sprite - {full_name}")
                     if not self.blank_sprite:
                         self.blank_sprite = pygame.Surface(
-                            (self.size, self.size),
-                            pygame.HWSURFACE | pygame.SRCALPHA
+                            (self.size, self.size), pygame.HWSURFACE | pygame.SRCALPHA
                         )
                     new_sprite = self.blank_sprite
 
@@ -105,7 +108,7 @@ class Sprites:
 
     def load_all(self):
         # get the width and height of the spritesheet
-        lineart = pygame.image.load('sprites/lineart.png')
+        lineart = pygame.image.load("sprites/lineart.png")
         width, height = lineart.get_size()
         del lineart  # unneeded
 
@@ -117,8 +120,10 @@ class Sprites:
         else:
             self.size = 50  # default, what base clangen uses
             print(f"lineart.png is not 3x7, falling back to {self.size}")
-            print(f"if you are a modder, please update scripts/cat/sprites.py and "
-                  f"do a search for 'if width / 3 == height / 7:'")
+            print(
+                f"if you are a modder, please update scripts/cat/sprites.py and "
+                f"do a search for 'if width / 3 == height / 7:'"
+            )
 
         del width, height  # unneeded
 
@@ -130,26 +135,25 @@ class Sprites:
             'whitepatches', 'whitepatches2', 'whitepatchesmoss',
             'tortiepatchesmasks', 'tortiesmoss',
             'medcatherbs', 'accbase', 'accadd', 'accpattern', 'collaradd'
-
         ]:
-            if 'lineart' in x and game.config['fun']['april_fools']:
+            if "lineart" in x and game.config["fun"]["april_fools"]:
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
 
         # Line art
-        self.make_group('lineart', (0, 0), 'lines')
-        self.make_group('shadersnewwhite', (0, 0), 'shaders')
-        self.make_group('lightingnew', (0, 0), 'lighting')
+        self.make_group("lineart", (0, 0), "lines")
+        self.make_group("shadersnewwhite", (0, 0), "shaders")
+        self.make_group("lightingnew", (0, 0), "lighting")
 
-        self.make_group('lineartdead', (0, 0), 'lineartdead')
-        self.make_group('lineartdf', (0, 0), 'lineartdf')
+        self.make_group("lineartdead", (0, 0), "lineartdead")
+        self.make_group("lineartdf", (0, 0), "lineartdf")
 
         # Fading Fog
         for i in range(0, 3):
-            self.make_group('fademask', (i, 0), f'fademask{i}')
-            self.make_group('fadestarclan', (i, 0), f'fadestarclan{i}')
-            self.make_group('fadedarkforest', (i, 0), f'fadedf{i}')
+            self.make_group("fademask", (i, 0), f"fademask{i}")
+            self.make_group("fadestarclan", (i, 0), f"fadestarclan{i}")
+            self.make_group("fadedarkforest", (i, 0), f"fadedf{i}")
 
         self.make_group('eyebase', (0, 0), 'eyebase')
         self.make_group('eyemid', (0, 0), 'eyemid')
@@ -274,12 +278,55 @@ class Sprites:
 
         # tortiepatchesmasks
         tortiepatchesmasks = [
-            ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'HALF', 'STREAK', 'MASK', 'SMOKE'],
-            ['MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'SWOOP', 'CHIMERA', 'CHEST', 'ARMTAIL',
-             'GRUMPYFACE'],
-            ['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'SMUDGED', 'DAUB', 'EMBER', 'BRIE'],
-            ['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED', 'BODY'],
-            ['SHILOH', 'FRECKLED', 'HEARTBEAT']
+            [
+                "ONE",
+                "TWO",
+                "THREE",
+                "FOUR",
+                "REDTAIL",
+                "DELILAH",
+                "HALF",
+                "STREAK",
+                "MASK",
+                "SMOKE",
+            ],
+            [
+                "MINIMALONE",
+                "MINIMALTWO",
+                "MINIMALTHREE",
+                "MINIMALFOUR",
+                "OREO",
+                "SWOOP",
+                "CHIMERA",
+                "CHEST",
+                "ARMTAIL",
+                "GRUMPYFACE",
+            ],
+            [
+                "MOTTLED",
+                "SIDEMASK",
+                "EYEDOT",
+                "BANDANA",
+                "PACMAN",
+                "STREAMSTRIKE",
+                "SMUDGED",
+                "DAUB",
+                "EMBER",
+                "BRIE",
+            ],
+            [
+                "ORIOLE",
+                "ROBIN",
+                "BRINDLE",
+                "PAIGE",
+                "ROSETAIL",
+                "SAFI",
+                "DAPPLENIGHT",
+                "BLANKET",
+                "BELOVED",
+                "BODY",
+            ],
+            ["SHILOH", "FRECKLED", "HEARTBEAT"],
         ]
 
         tortiepatchesmasksmoss = [
@@ -290,7 +337,7 @@ class Sprites:
 
         for row, masks in enumerate(tortiepatchesmasks):
             for col, mask in enumerate(masks):
-                self.make_group('tortiepatchesmasks', (col, row), f"tortiemask{mask}")
+                self.make_group("tortiepatchesmasks", (col, row), f"tortiemask{mask}")
 
         for row, masks in enumerate(tortiepatchesmasksmoss):
             for col, mask in enumerate(masks):
@@ -315,32 +362,87 @@ class Sprites:
 
         # Define scars
         scars_data = [
-            ["ONE", "TWO", "THREE", "MANLEG", "BRIGHTHEART", "MANTAIL", "BRIDGE", "RIGHTBLIND", "LEFTBLIND",
-             "BOTHBLIND", "BURNPAWS", "BURNTAIL"],
-            ["BURNBELLY", "BEAKCHEEK", "BEAKLOWER", "BURNRUMP", "CATBITE", "RATBITE", "FROSTFACE", "FROSTTAIL",
-             "FROSTMITT", "FROSTSOCK", "QUILLCHUNK", "QUILLSCRATCH"],
-            ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY", "TOETRAP", "SNAKE", "LEGBITE",
-             "NECKBITE", "FACE"],
-            ["HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "TOE", "BEAKSIDE", "CATBITETWO", "SNAKETWO", "FOUR"]
+            [
+                "ONE",
+                "TWO",
+                "THREE",
+                "MANLEG",
+                "BRIGHTHEART",
+                "MANTAIL",
+                "BRIDGE",
+                "RIGHTBLIND",
+                "LEFTBLIND",
+                "BOTHBLIND",
+                "BURNPAWS",
+                "BURNTAIL",
+            ],
+            [
+                "BURNBELLY",
+                "BEAKCHEEK",
+                "BEAKLOWER",
+                "BURNRUMP",
+                "CATBITE",
+                "RATBITE",
+                "FROSTFACE",
+                "FROSTTAIL",
+                "FROSTMITT",
+                "FROSTSOCK",
+                "QUILLCHUNK",
+                "QUILLSCRATCH",
+            ],
+            [
+                "TAILSCAR",
+                "SNOUT",
+                "CHEEK",
+                "SIDE",
+                "THROAT",
+                "TAILBASE",
+                "BELLY",
+                "TOETRAP",
+                "SNAKE",
+                "LEGBITE",
+                "NECKBITE",
+                "FACE",
+            ],
+            [
+                "HINDLEG",
+                "BACK",
+                "QUILLSIDE",
+                "SCRATCHSIDE",
+                "TOE",
+                "BEAKSIDE",
+                "CATBITETWO",
+                "SNAKETWO",
+                "FOUR",
+            ],
         ]
 
         # define missing parts
         missing_parts_data = [
-            ["LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"]
+            [
+                "LEFTEAR",
+                "RIGHTEAR",
+                "NOTAIL",
+                "NOLEFTEAR",
+                "NORIGHTEAR",
+                "NOEAR",
+                "HALFTAIL",
+                "NOPAW",
+            ]
         ]
 
-        # scars 
+        # scars
         for row, scars in enumerate(scars_data):
             for col, scar in enumerate(scars):
-                self.make_group('scars', (col, row), f'scars{scar}')
+                self.make_group("scars", (col, row), f"scars{scar}")
 
         # missing parts
         for row, missing_parts in enumerate(missing_parts_data):
             for col, missing_part in enumerate(missing_parts):
-                self.make_group('missingscars', (col, row), f'scars{missing_part}')
+                self.make_group("missingscars", (col, row), f"scars{missing_part}")
 
         # accessories
-        #to my beloved modders, im very sorry for reordering everything <333 -clay
+        # to my beloved modders, im very sorry for reordering everything <333 -clay
         medcatherbs_data = [
             ["MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "CATTAIL", "SUNGLASSES", "LUNA MOTH", "ATLAS MOTH", "BIRD SKULL", "LUCKY CLOVER"],
             ["BLUEBELLS", "LILY OF THE VALLEY", "SNAPDRAGON", "ANTLERS", "STICK", "FIREFLIES", "SPROUT", "MUSHROOM", "JUNIPER", "RASPBERRY", "LAVENDER"],
@@ -400,20 +502,51 @@ class Sprites:
         loads clan symbols
         """
 
-        if os.path.exists('resources/dicts/clan_symbols.json'):
-            with open('resources/dicts/clan_symbols.json') as read_file:
+        if os.path.exists("resources/dicts/clan_symbols.json"):
+            with open(
+                "resources/dicts/clan_symbols.json", encoding="utf-8"
+            ) as read_file:
                 self.symbol_dict = ujson.loads(read_file.read())
 
         # U and X omitted from letter list due to having no prefixes
-        letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
-                   "V", "W", "Y", "Z"]
+        letters = [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "V",
+            "W",
+            "Y",
+            "Z",
+        ]
 
         # sprite names will format as "symbol{PREFIX}{INDEX}", ex. "symbolSPRING0"
         y_pos = 1
         for letter in letters:
             x_mod = 0
-            for i, symbol in enumerate([symbol for symbol in self.symbol_dict if
-                                        letter in symbol and self.symbol_dict[symbol]["variants"]]):
+            for i, symbol in enumerate(
+                [
+                    symbol
+                    for symbol in self.symbol_dict
+                    if letter in symbol and self.symbol_dict[symbol]["variants"]
+                ]
+            ):
                 if self.symbol_dict[symbol]["variants"] > 1 and x_mod > 0:
                     x_mod += -1
                 for variant_index in range(self.symbol_dict[symbol]["variants"]):
@@ -422,13 +555,17 @@ class Sprites:
                     if self.symbol_dict[symbol]["variants"] > 1:
                         x_mod += 1
                     elif x_mod > 0:
-                        x_pos += - 1
+                        x_pos += -1
 
                     self.clan_symbols.append(f"symbol{symbol.upper()}{variant_index}")
-                    self.make_group('symbols',
-                                    (x_pos, y_pos),
-                                    f"symbol{symbol.upper()}{variant_index}",
-                                    sprites_x=1, sprites_y=1, no_index=True)
+                    self.make_group(
+                        "symbols",
+                        (x_pos, y_pos),
+                        f"symbol{symbol.upper()}{variant_index}",
+                        sprites_x=1,
+                        sprites_y=1,
+                        no_index=True,
+                    )
 
             y_pos += 1
 
@@ -443,6 +580,7 @@ class Sprites:
         # debug hot pink (255, 105, 180)
 
         return dark_mode_symbol
+
 
 # CREATE INSTANCE
 sprites = Sprites()
