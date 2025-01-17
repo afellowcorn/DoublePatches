@@ -60,7 +60,16 @@ def get_version_info():
             is_sandboxed = True
 
         get_version_info.instance = VersionInfo(
-            is_source_build, release_channel, version_number, mod_version, upstream, is_itch, is_sandboxed, git_installed, is_thonny)
+            is_source_build,
+            release_channel,
+            version_number,
+            mod_version,
+            upstream,
+            is_itch,
+            is_sandboxed,
+            git_installed,
+            is_thonny,
+        )
     return get_version_info.instance
 
 
@@ -68,7 +77,18 @@ get_version_info.instance = None
 
 
 class VersionInfo:
-    def __init__(self, is_source_build: bool, release_channel: str, version_number: str, mod_version: str, upstream: str, is_itch: bool, is_sandboxed: bool, git_installed: bool, is_thonny: bool):
+    def __init__(
+        self,
+        is_source_build: bool,
+        release_channel: str,
+        version_number: str,
+        mod_version: str,
+        upstream: str,
+        is_itch: bool,
+        is_sandboxed: bool,
+        git_installed: bool,
+        is_thonny: bool,
+    ):
         self.is_source_build = is_source_build
         self.release_channel = release_channel
         self.version_number = version_number

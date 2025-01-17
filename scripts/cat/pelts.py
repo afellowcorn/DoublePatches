@@ -430,6 +430,12 @@ class Pelt():
             self.points = self.white_patches
             self.white_patches = None
 
+        
+        if self.tortiepattern and "tortie" in self.tortiepattern:
+            self.tortiepattern = sub("tortie", "", self.tortiepattern.lower())
+            if self.tortiepattern == "solid":
+                self.tortiepattern = "single"               
+        
         # Eye Color Convert Stuff
         if self.eye_colour == "BLUE2":
             self.eye_colour = "COBALT"
@@ -455,23 +461,14 @@ class Pelt():
                 self.cat_sprites["senior adult"] = self.cat_sprites["adult"]
                 self.cat_sprites["para_adult"] = 16
         else:
-            self.cat_sprites['para_adult'] = 15
-        if self.cat_sprites['senior'] not in [12, 13, 14]:
-            if self.cat_sprites['senior'] == 3:
-                self.cat_sprites['senior'] = 12
-            elif self.cat_sprites['senior'] == 4:
-                self.cat_sprites['senior'] = 13
-            elif self.cat_sprites['senior'] == 5:
-                self.cat_sprites['senior'] = 14        
-            
-        if self.pattern == "MINIMAL1":
-            self.pattern = "MINIMALONE"
-        elif self.pattern == "MINIMAL2":
-            self.pattern = "MINIMALTWO"
-        elif self.pattern == "MINIMAL3":
-            self.pattern = "MINIMALTHREE"
-        elif self.pattern == "MINIMAL4":
-            self.pattern = "MINIMALFOUR"
+            self.cat_sprites["para_adult"] = 15
+        if self.cat_sprites["senior"] not in [12, 13, 14]:
+            if self.cat_sprites["senior"] == 3:
+                self.cat_sprites["senior"] = 12
+            elif self.cat_sprites["senior"] == 4:
+                self.cat_sprites["senior"] = 13
+            elif self.cat_sprites["senior"] == 5:
+                self.cat_sprites["senior"] = 14
 
     def init_eyes(self, parents):
         if not parents:
@@ -483,6 +480,7 @@ class Pelt():
 
         # White patches must be initalized before eye color.
         num = game.config["cat_generation"]["base_heterochromia"]
+
         if self.white_patches:
             if any(white in [Pelt.high_white, Pelt.mostly_white, 'FULLWHITE'] for white in self.white_patches) or self.colour == 'WHITE':
                 num = num - 90
@@ -1186,7 +1184,13 @@ class Pelt():
             weights = (10, 10, 10, 10, 1)
 
         chosen_white_patches = set()
-        white_list = [Pelt.little_white, Pelt.mid_white, Pelt.high_white, Pelt.mostly_white, ['FULLWHITE']]
+        white_list = [
+            Pelt.little_white,
+            Pelt.mid_white,
+            Pelt.high_white,
+            Pelt.mostly_white,
+            ["FULLWHITE"],
+        ]
         chosen_white_patches.add(choice(
             random.choices(white_list, weights=weights, k=1)[0]
         ))
@@ -1375,7 +1379,7 @@ def _describe_pattern(cat, short=False):
             white = i18n.t("cat.pelts.FULLWHITE")
             if i18n.t("cat.pelts.WHITE", count=1) in color_name:
                 color_name = white
-            elif any(white in Pelt.mostly_white for white in cat.pelt.white_patches)
+            elif any(white in Pelt.mostly_white for white in cat.pelt.white_patches):
                 color_name = adjust_list_text([white, color_name])
             else:
                 color_name = adjust_list_text([color_name, white])

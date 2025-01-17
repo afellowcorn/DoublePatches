@@ -14,6 +14,6 @@
         "nursery": "nursery",
         "clearing": "clearing",
         "apprentices_den": "apprentices' den",
-        "dev_watermark": "Dev Build: %{ver}"
+        "dev_watermark": "DoublePatches: %{ver}"
     }
 }
