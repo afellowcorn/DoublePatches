@@ -1,5 +1,4 @@
 {
-    "comment": "If you add new illnesses, make sure to add their key to illnesses.en.json otherwise they will not display",
     "seizure": {
         "severity": "severe",
         "mortality": {
@@ -26,16 +25,12 @@
         "risks": [
 
         ],
-        "herbs": {
-            "1": [
-                "juniper",
-                "poppy",
-                "thyme",
-                "ragwort"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "juniper",
+            "poppy",
+            "thyme",
+            "ragwort"
+        ]
     },
     "diarrhea": {
         "severity": "major",
@@ -61,16 +56,12 @@
         "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [],
-        "herbs": {
-            "1": [
-                "betony",
-                "mullein",
-                "juniper",
-                "mallow"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "betony",
+            "mullein",
+            "juniper",
+            "mallow"
+        ]
     },
     "fleas": {
         "severity": "minor",
@@ -101,13 +92,9 @@
                 "chance": 20
             }
         ],
-        "herbs": {
-            "1": [
-                "plantain"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "plantain"
+        ]
     },
     "greencough": {
         "severity": "severe",
@@ -138,8 +125,7 @@
                 "chance": 60
             }
         ],
-        "herbs": {
-        "1": [
+        "herbs": [
             "catmint",
             "tansy",
             "mullein",
@@ -147,10 +133,7 @@
             "juniper",
             "poppy",
             "moss"
-        ],
-        "2": [],
-        "3": []
-        }
+        ]
     },
     "kittencough": {
         "severity": "severe",
@@ -181,19 +164,15 @@
                 "chance": 10
             }
         ],
-        "herbs": {
-            "1": [
-                "catmint",
-                "tansy",
-                "mullein",
-                "plantain",
-                "juniper",
-                "poppy",
-                "moss"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "catmint",
+            "tansy",
+            "mullein",
+            "plantain",
+            "juniper",
+            "poppy",
+            "moss"
+        ]
     },
     "an infected wound": {
         "severity": "major",
@@ -224,16 +203,12 @@
                 "chance": 10
             }
         ],
-        "herbs": {
-            "1": [
-                "marigold",
-                "burdock",
-                "wild_garlic",
-                "poppy"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "marigold",
+            "burdock",
+            "wild_garlic",
+            "poppy"
+        ]
     },
     "carrionplace disease": {
         "severity": "severe",
@@ -259,16 +234,12 @@
         "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [],
-        "herbs": {
-            "1": [
-                "marigold",
-                "burdock",
-                "wild_garlic",
-                "poppy"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "marigold",
+            "burdock",
+            "wild_garlic",
+            "poppy"
+        ]
     },
     "redcough": {
         "severity": "severe",
@@ -294,20 +265,16 @@
         "medicine_duration": 40,
         "infectiousness": 0,
         "risks": [],
-        "herbs": {
-            "1": [
-                "lungwort",
-                "mullein",
-                "tansy",
-                "plantain",
-                "juniper",
-                "ragwort",
-                "poppy",
-                "moss"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "lungwort",
+            "mullein",
+            "tansy",
+            "plantain",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
+        ]
     },
     "running nose": {
         "severity": "minor",
@@ -338,15 +305,11 @@
                 "chance": 15
             }
         ],
-        "herbs": {
-            "1": [
-                "ragwort",
-                "juniper",
-                "poppy"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "ragwort",
+            "juniper",
+            "poppy"
+        ]
     },
     "whitecough": {
         "severity": "major",
@@ -377,20 +340,16 @@
                 "chance": 18
             }
         ],
-        "herbs": {
-            "1": [
-                "catmint",
-                "plantain",
-                "tansy",
-                "mullein",
-                "juniper",
-                "ragwort",
-                "poppy",
-                "moss"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "catmint",
+            "plantain",
+            "tansy",
+            "mullein",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
+        ]
     },
     "yellowcough": {
         "severity": "major",
@@ -421,13 +380,9 @@
                 "chance": 80
             }
         ],
-        "herbs": {
-            "1": [
-                "lungwort"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "lungwort"
+        ]
     },
     "a festering wound": {
         "severity": "severe",
@@ -453,18 +408,15 @@
         "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [],
-        "herbs": {
-            "1": ["marigold",
-                "burdock",
-                "oak_leaves",
-                "ragwort",
-                "juniper",
-                "poppy",
-                "moss"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "marigold",
+            "burdock",
+            "oak_leaves",
+            "ragwort",
+            "juniper",
+            "poppy",
+            "moss"
+        ]
     },
     "heat stroke": {
         "severity": "severe",
@@ -490,15 +442,11 @@
         "medicine_duration": 1,
         "infectiousness": 0,
         "risks": [],
-        "herbs": {
-            "1": [
-                "juniper",
-                "ragwort",
-                "moss"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "moss"
+        ]
     },
     "heat exhaustion": {
         "severity": "major",
@@ -529,14 +477,11 @@
                 "chance": 5
             }
         ],
-        "herbs": {
-            "1": [
-                "juniper",
-                "ragwort",
-                "moss"],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "moss"
+        ]
     },
     "stomachache": {
         "severity": "minor",
@@ -567,16 +512,12 @@
                 "chance": 8
             }
         ],
-        "herbs": {
-            "1": [
-                "juniper",
-                "mallow",
-                "ragwort",
-                "poppy"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "juniper",
+            "mallow",
+            "ragwort",
+            "poppy"
+        ]
     },
     "constant nightmares": {
         "severity": "major",
@@ -603,16 +544,11 @@
         "infectiousness": 0,
         "risks": [
         ],
-        "herbs": {
-            "1": [
-                "juniper",
-                "thyme",
-                "poppy"
-
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
+        ]
     },
     "grief stricken": {
         "severity": "major",
@@ -647,15 +583,11 @@
                 "chance": 15
             }
         ],
-        "herbs": {
-            "1": [
-                "juniper",
-                "thyme",
-                "poppy"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
+        ]
     },
     "malnourished": {
         "severity": "minor",
@@ -681,13 +613,9 @@
         "medicine_duration": 100,
         "infectiousness": 0,
         "risks": [],
-        "herbs": {
-            "1": [
+        "herbs": [
             "thyme"
-            ],
-            "2": [],
-            "3": []
-        }
+        ]
     },
     "starving": {
         "severity": "severe",
@@ -713,12 +641,8 @@
         "medicine_duration": 100,
         "infectiousness": 0,
         "risks": [],
-        "herbs": {
-            "1": [
-                "thyme"
-            ],
-            "2": [],
-            "3": []
-        }
+        "herbs": [
+            "thyme"
+        ]
     }
 }

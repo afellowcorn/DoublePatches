@@ -1,13 +1,6 @@
 name: PyInstaller build
 
-on:
-  push:
-    paths-ignore:
-      - ".github/workflows/build-docs.yml"
-      - "docs/**"
-      - "docs-resources/**"
-      - "mkdocs.yml"
-      - "Dockerfile"
+on: [push]
 
 permissions:
   contents: write
@@ -582,51 +575,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install poetry
-        uses: abatilo/actions-poetry@v2
+        uses: abatilo/actions-poetry@v3
         with:
-          poetry-version: 1.4.1
-      - name: Setup Python
+          poetry-version: 1.7.1
+      - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python_version }}
-          architecture: ${{ matrix.python_arch }}
+          python-version: "3.11"
           cache: "poetry"
-      - name: Install build dependencies (Ubuntu)
-        if: startsWith(matrix.os, 'ubuntu')
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential zlib1g-dev
-      - name: Install build dependencies (macOS)
-        if: startsWith(matrix.os, 'macos')
-        run: |
-          brew install zlib
-      - name: Install Visual Studio Build Tools (Windows)
-        if: startsWith(matrix.os, 'windows')
-        uses: microsoft/setup-msbuild@v1.1
-      - name: Set up cargo cache (Windows)
-        if: startsWith(matrix.os, 'windows')
-        uses: actions/cache@v4
-        continue-on-error: false
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Build PyInstaller bootloader
-        run: |
-          git clone https://github.com/pyinstaller/pyinstaller.git
-          cd pyinstaller
-          git checkout v6.11.0
-          cd bootloader
-          python ./waf all
-          cd ../../
-          poetry run pip install -e pyinstaller
       - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
@@ -643,22 +601,17 @@ jobs:
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
+      # This only runs on development builds, please write release commits manually
       - name: Write commit file
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
           git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
-      - name: Build self-updater binary (Windows)
-        if: startsWith(matrix.os, 'windows')
-        run: |
-          cd self_updater
-          cargo build --release
-          cp target/release/self_updater.exe ../resources/
-      - name: Run PyInstaller (Development)
+      - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
-      - name: Run PyInstaller (Release)
+      - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python -m PyInstaller Clangen.spec
         env:
@@ -690,7 +643,7 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/${{ matrix.api_artifact_name }}' \
+            'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/macOS' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -710,10 +663,16 @@ jobs:
         with:
           files: DoublePatches_macOS64.dmg
 
-  confirm_release:
+  confirm_release_ubuntu_22_04:
     runs-on: ubuntu-22.04
     if: ${{ vars.USE_UPDATE_API != '' && (github.ref == 'refs/heads/development' || startsWith(github.ref, 'refs/tags/')) }}
-    needs: build
+    needs:
+      - build_ubuntu_20_04
+      - build_ubuntu_22_04
+      - build_win32
+      - build_win64
+      - build_win64_py311
+      - build_macos64
     steps:
       - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
