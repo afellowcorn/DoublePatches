@@ -617,7 +617,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: rm -r dist/DoublePatches
+        run: rm -r dist/MossMod
       - name: Install appdmg
         run: "npm install -g appdmg"
       - name: Generate .dmg
