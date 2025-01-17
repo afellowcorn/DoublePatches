@@ -2953,45 +2953,46 @@ def generate_sprite(
                 new_sprite.blit(highlight_pelt, (0, 0))
             new_sprite.blit(line_pelt, (0, 0))
 
-        for pattern in cat.pelt.pattern:
-            patches = sprites.sprites["baseSOLID" + cat_sprite].copy().convert_alpha()
-            if tortie_base in swap_layers:
-                if tortie_base == "SOKOKE":
+        if tortie_base:
+            for pattern in cat.pelt.pattern:
+                patches = sprites.sprites["baseSOLID" + cat_sprite].copy().convert_alpha()
+                if tortie_base in swap_layers:
+                    if tortie_base == "SOKOKE":
+                        patches.blit(tortie_base_pelt, (0, 0))
+                        patches.blit(tortie_mid_pelt, (0, 0))
+                        patches.blit(tortie_dark_pelt, (0, 0))
+                        patches.blit(tortie_shade_pelt, (0, 0))
+                        patches.blit(tortie_highlight_pelt, (0, 0))
+                        patches.blit(tortie_line_pelt, (0, 0))
+                        patches.blit(sprites.sprites["tortiemask" + pattern + cat_sprite], (0, 0),
+                                     special_flags=pygame.BLEND_RGBA_MULT)
+                        new_sprite.blit(patches, (0, 0))
+                    if tortie_base == "BRAIDED":
+                        patches.blit(tortie_base_pelt, (0, 0))
+                        patches.blit(tortie_unders_pelt, (0, 0))
+                        patches.blit(tortie_mid_pelt, (0, 0))
+                        patches.blit(tortie_dark_pelt, (0, 0))
+                        patches.blit(tortie_shade_pelt, (0, 0))
+                        patches.blit(tortie_line_pelt, (0, 0))
+                        patches.blit(sprites.sprites["tortiemask" + pattern + cat_sprite], (0, 0),
+                                     special_flags=pygame.BLEND_RGBA_MULT)
+                        new_sprite.blit(patches, (0, 0))
+                else:
                     patches.blit(tortie_base_pelt, (0, 0))
-                    patches.blit(tortie_mid_pelt, (0, 0))
-                    patches.blit(tortie_dark_pelt, (0, 0))
-                    patches.blit(tortie_shade_pelt, (0, 0))
-                    patches.blit(tortie_highlight_pelt, (0, 0))
+                    if tortie_base in u_layers:
+                        patches.blit(tortie_unders_pelt, (0, 0))
+                    if tortie_base in m_layers:
+                        patches.blit(tortie_mid_pelt, (0, 0))
+                    if tortie_base in d_layers:
+                        patches.blit(tortie_dark_pelt, (0, 0))
+                    if tortie_base in s_layers:
+                        patches.blit(tortie_shade_pelt, (0, 0))
+                    if tortie_base in h_layers:
+                        patches.blit(tortie_highlight_pelt, (0, 0))
                     patches.blit(tortie_line_pelt, (0, 0))
-                    patches.blit(sprites.sprites["tortiemask" + pattern + cat_sprite], (0, 0),
-                                 special_flags=pygame.BLEND_RGBA_MULT)
-                    new_sprite.blit(patches, (0, 0))
-                if tortie_base == "BRAIDED":
-                    patches.blit(tortie_base_pelt, (0, 0))
-                    patches.blit(tortie_unders_pelt, (0, 0))
-                    patches.blit(tortie_mid_pelt, (0, 0))
-                    patches.blit(tortie_dark_pelt, (0, 0))
-                    patches.blit(tortie_shade_pelt, (0, 0))
-                    patches.blit(tortie_line_pelt, (0, 0))
-                    patches.blit(sprites.sprites["tortiemask" + pattern + cat_sprite], (0, 0),
-                                 special_flags=pygame.BLEND_RGBA_MULT)
-                    new_sprite.blit(patches, (0, 0))
-            else:
-                patches.blit(tortie_base_pelt, (0, 0))
-                if tortie_base in u_layers:
-                    patches.blit(tortie_unders_pelt, (0, 0))
-                if tortie_base in m_layers:
-                    patches.blit(tortie_mid_pelt, (0, 0))
-                if tortie_base in d_layers:
-                    patches.blit(tortie_dark_pelt, (0, 0))
-                if tortie_base in s_layers:
-                    patches.blit(tortie_shade_pelt, (0, 0))
-                if tortie_base in h_layers:
-                    patches.blit(tortie_highlight_pelt, (0, 0))
-                patches.blit(tortie_line_pelt, (0, 0))
-            patches.blit(sprites.sprites["tortiemask" + pattern + cat_sprite], (0, 0),
-                         special_flags=pygame.BLEND_RGBA_MULT)
-            new_sprite.blit(patches, (0, 0))
+                patches.blit(sprites.sprites["tortiemask" + pattern + cat_sprite], (0, 0),
+                             special_flags=pygame.BLEND_RGBA_MULT)
+                new_sprite.blit(patches, (0, 0))
 
         # TINTS
         if (

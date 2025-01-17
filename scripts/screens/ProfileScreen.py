@@ -784,27 +784,6 @@ class ProfileScreen(Screens):
         # NEWLINE ----------
         output += "\n"
 
-        #tortie info
-        if the_cat.pelt.name == "Tortie":
-            output += 'tortie patch: ' + the_cat.pelt.tortiecolour.lower() + ' ' + the_cat.pelt.pattern.lower()
-            # NEWLINE ----------
-            output += "\n"
-        elif the_cat.pelt.name == "Calico":
-            output += 'tortie patch: ' + the_cat.pelt.tortiecolour.lower() + ' ' + the_cat.pelt.pattern.lower()
-            # NEWLINE ----------
-            output += "\n"
-        else:
-            None
-
-        #whitepatch info
-        if the_cat.pelt.white_patches == None:
-            None
-        else:
-            output += 'white patch: ' + the_cat.pelt.white_patches.lower() + ' (tint: ' + str(
-                the_cat.pelt.white_patches_tint) + ')'
-            # NEWLINE ----------
-            output += "\n"
-
         # vitiligo info
         if the_cat.pelt.vitiligo == None:
             None
