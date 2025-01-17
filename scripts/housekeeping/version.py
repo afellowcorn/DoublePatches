@@ -2,13 +2,15 @@ import logging
 import os
 import subprocess
 import sys
-from importlib.util import find_spec
 from configparser import ConfigParser
+from importlib.util import find_spec
+
 from platformdirs import user_data_dir
+
 logger = logging.getLogger(__name__)
 
 VERSION_NAME = "0.11.2"
-MOD_VERSION = "1.2"
+MOD_VERSION = "1.3"
 # This is saved in the Clan save-file, and is used for save-file converstion.
 SAVE_VERSION_NUMBER = 3
 
@@ -25,7 +27,7 @@ def get_version_info():
         is_thonny = False
         git_installed = False
 
-        if not getattr(sys, 'frozen', False):
+        if not getattr(sys, "frozen", False):
             is_source_build = True
 
         if find_spec("thonny") is not None:
@@ -39,13 +41,19 @@ def get_version_info():
             upstream = version_ini.get("DEFAULT", "upstream")
         else:
             try:
-                version_number = subprocess.check_output(
-                    ['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
+                version_number = (
+                    subprocess.check_output(["git", "rev-parse", "HEAD"])
+                    .decode("ascii")
+                    .strip()
+                )
                 git_installed = True
             except:
                 logger.exception("Git CLI invocation failed")
 
-        if "--launched-through-itch" in sys.argv or "LAUNCHED_THROUGH_ITCH" in os.environ:
+        if (
+            "--launched-through-itch" in sys.argv
+            or "LAUNCHED_THROUGH_ITCH" in os.environ
+        ):
             is_itch = True
 
         if "itch-player" in user_data_dir().lower():
